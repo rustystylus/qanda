@@ -19,7 +19,7 @@ Route::controller('users', 'UsersController');
 
 Route::resource('tags', 'TagsController');
 
-Route::resource('questions', 'QuestionsController');
-Route::get('questions/quote/{id}', array('as' => 'quote', 'uses' => 'QuestionsController@quote'));
+Route::resource('documents', 'DocumentsController');
+Route::get('documents/quote/{id}', array('as' => 'quote', 'uses' => 'DocumentsController@quote'));
 
-Route::resource('answers', 'AnswersController');
+Route::resource('translations', 'TranslationsController');

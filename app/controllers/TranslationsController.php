@@ -1,20 +1,20 @@
 <?php
-class AnswersController extends BaseController {
+class TranslationsController extends BaseController {
 
     protected $layout = "layouts.basic";
 
 	public $restful=true;
 
-	public function __construct() 
+	public function __construct()
 	{
 	    $this->beforeFilter('csrf', array('on'=>'post'));
 	    $this->beforeFilter('auth', array('only'=>array('getIndex')));
 	}
 
-	public function index() 
+	public function index()
 	{
-		$answerInfo = Answer::orderBy('id', 'DESC')->get();
-  	  	$this->layout->content = View::make('answers.index')->with('answerInfo',$answerInfo);
+		$translationInfo = Translation::orderBy('id', 'DESC')->get();
+  	  	$this->layout->content = View::make('translations.index')->with('translationInfo',$translationInfo);
 	}
 
 	/**
@@ -26,7 +26,7 @@ class AnswersController extends BaseController {
 	{
 		// get the question
 		$question = Question::find($id);
-				return View::make('answers/create')
+				return View::make('translations/create')
 		->with('question', $question);
 
 		//$this->layout->content = View::make('questions.create');
@@ -49,18 +49,18 @@ class AnswersController extends BaseController {
 
 		// process the login
 		if ($validator->fails()) {
-			return Redirect::to('answers/create')
+			return Redirect::to('translations/create')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
 		} else {
 			// store
-			$answer = new Answer;
-			$answer->text      = Input::get('text');
-			$answer->save();
+			$translation = new Translation;
+			$translation->text      = Input::get('text');
+			$translation->save();
 
 			// redirect
-			Session::flash('message', 'Successfully created answer!');
-			return Redirect::to('answers');
+			Session::flash('message', 'Successfully created translation!');
+			return Redirect::to('translations');
 		}
 	}
 
@@ -72,12 +72,12 @@ class AnswersController extends BaseController {
 	 */
 	public function show($id)
 	{
-		// get the answer
-		$answer = Answer::find($id);
+		// get the translation
+		$translation = Translation::find($id);
 
-		// show the view and pass the answer to it
-		return View::make('answers.show')
-			->with('answer', $answer);
+		// show the view and pass the translation to it
+		return View::make('translations.show')
+			->with('translation', $translation);
 	}
 
 	/**
@@ -89,12 +89,12 @@ class AnswersController extends BaseController {
 	public function edit($id)
 	{
 
-		// get the answer
-		$answer = Answer::find($id);
+		// get the translation
+		$translation = Translation::find($id);
 
-		// show the edit form and pass the answer
-		return View::make('answers.edit')
-			->with('answer', $answer);
+		// show the edit form and pass the translation
+		return View::make('translations.edit')
+			->with('translation', $translation);
 	}
 
 	/**
@@ -114,18 +114,18 @@ class AnswersController extends BaseController {
 
 		// process the login
 		if ($validator->fails()) {
-			return Redirect::to('answers/' . $id . '/edit')
+			return Redirect::to('translations/' . $id . '/edit')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
 		} else {
 			// store
-			$answer = Answer::find($id);
-			$answer->text      = Input::get('text');
-			$answer->save();
+			$translation = Translation::find($id);
+			$translation->text      = Input::get('text');
+			$translation->save();
 
 			// redirect
-			Session::flash('message', 'Successfully updated answer!');
-			return Redirect::to('answers');
+			Session::flash('message', 'Successfully updated translation!');
+			return Redirect::to('translations');
 		}
 	}
 
@@ -138,12 +138,12 @@ class AnswersController extends BaseController {
 	public function destroy($id)
 	{
 		// delete
-		$answer = Answer::find($id);
-		$answer->delete();
+		$translation = Translation::find($id);
+		$translation->delete();
 
 		// redirect
-		Session::flash('message', 'Successfully deleted the answer!');
-		return Redirect::to('answers');
+		Session::flash('message', 'Successfully deleted the translation!');
+		return Redirect::to('translations');
 	}
 
 }

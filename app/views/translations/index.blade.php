@@ -1,8 +1,8 @@
 
-<h1>Postings</h1>
+<h1>Translations</h1>
 
 
-<table width="100%" class="display" id="postingscreate" cellspacing="0">
+<table width="100%" class="display" id="translationscreate" cellspacing="0">
         <thead>
             <tr>
             	<th> </th>
@@ -16,7 +16,7 @@
         </thead>
         <tbody>
             <tr>
-				{{ Form::open(array('url' => 'postings')) }}
+				{{ Form::open(array('url' => 'translations')) }}
 				<td> </td>
 				<td>
 					{{Form::input('Date', 'Date', null, array('class' => 'form-control', 'placeholder' => 'yyyy-mm-dd'))}}
@@ -47,7 +47,7 @@
         </tbody>
 </table>
 
-<table width="100%" class="display" id="postings" cellspacing="0">
+<table width="100%" class="display" id="translations" cellspacing="0">
         <thead>
             <tr>
             	<th>ID</th>
@@ -74,7 +74,7 @@
  
         <tbody>
 
-			@foreach ($postingInfo as $info)
+			@foreach ($translationInfo as $info)
 				<tr>
 					<td>
 			    		{{$info->PostID}}
@@ -98,7 +98,7 @@
 			    		{{$info->Cr}}
 					</td>
 					<td>
-						<a href="{{ URL::to('postings/'.$info->PostID.'/edit') }}">
+						<a href="{{ URL::to('translations/'.$info->PostID.'/edit') }}">
 						<button type="button" class="btn btn-default">
 							Edit
 						</button>
@@ -112,7 +112,7 @@
 
 <script>
     $(document).ready(function() {
-        $('#postings').dataTable();
+        $('#translations').dataTable();
         $( "#datepicker" ).datepicker();
     } );
 

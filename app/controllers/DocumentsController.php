@@ -1,19 +1,19 @@
 <?php
-class QuestionsController extends BaseController {
+class DocumentsController extends BaseController {
     protected $layout = "layouts.basic";
 
 	public $restful=true;
 
-	public function __construct() 
+	public function __construct()
 	{
 	    $this->beforeFilter('csrf', array('on'=>'post'));
 	    $this->beforeFilter('auth', array('only'=>array('getIndex')));
 	}
 
-	public function index() 
+	public function index()
 	{
-		$questionInfo = Question::all();
-  	  	$this->layout->content = View::make('questions.index')->with('questionInfo',$questionInfo);
+		$documentInfo = Document::all();
+  	  	$this->layout->content = View::make('documents.index')->with('documentInfo',$documentInfo);
 	}
 
 	/**
@@ -23,7 +23,7 @@ class QuestionsController extends BaseController {
 	 */
 	public function create()
 	{
-		$this->layout->content = View::make('questions.create');
+		$this->layout->content = View::make('documents.create');
 	}
 
 	/**
@@ -43,19 +43,19 @@ class QuestionsController extends BaseController {
 
 		// process the login
 		if ($validator->fails()) {
-			return Redirect::to('questions/create')
+			return Redirect::to('documents/create')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
 		} else {
 			// store
-			$question = new Question;
-			$question->title       = Input::get('title');
-			$question->text      = Input::get('text');
-			$question->save();
+			$document = new Document;
+			$document->title       = Input::get('title');
+			$document->text      = Input::get('text');
+			$document->save();
 
 			// redirect
-			Session::flash('message', 'Successfully created question!');
-			return Redirect::to('questions');
+			Session::flash('message', 'Successfully created document!');
+			return Redirect::to('documents');
 		}
 	}
 
@@ -67,12 +67,12 @@ class QuestionsController extends BaseController {
 	 */
 	public function show($id)
 	{
-		// get the question
-		$question = Question::find($id);
+		// get the document
+		$document = Document::find($id);
 
-		// show the view and pass the question to it
-		return View::make('questions.show')
-			->with('question', $question);
+		// show the view and pass the document to it
+		return View::make('documents.show')
+			->with('document', $document);
 
 	}
 
@@ -84,12 +84,12 @@ class QuestionsController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		// get the question
-		$question = Question::find($id);
+		// get the document
+		$document = Document::find($id);
 
-		// show the edit form and pass the question
-		return View::make('questions.edit')
-			->with('question', $question);
+		// show the edit form and pass the document
+		return View::make('documents.edit')
+			->with('document', $document);
 	}
 
 	/**
@@ -110,29 +110,29 @@ class QuestionsController extends BaseController {
 
 		// process the login
 		if ($validator->fails()) {
-			return Redirect::to('questions/' . $id . '/edit')
+			return Redirect::to('documents/' . $id . '/edit')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
 		} else {
 			// store
-			$question = Question::find($id);
-			$question->title       = Input::get('title');
-			$question->text      = Input::get('text');
-     		$question->save();
+			$document = Document::find($id);
+			$document->title       = Input::get('title');
+			$document->text      = Input::get('text');
+     		$document->save();
 
 			// redirect
-			Session::flash('message', 'Successfully updated question!');
-			return Redirect::to('questions');
+			Session::flash('message', 'Successfully updated document!');
+			return Redirect::to('documents');
 		}
 	}
 	public function quote($id)
 	{
-		// get the question
-		$question = Question::find($id);
+		// get the document
+		$document = Document::find($id);
 
-		// show the view and pass the question to it
-		return View::make('questions.quote')
-					->with('question', $question);
+		// show the view and pass the document to it
+		return View::make('documents.quote')
+					->with('document', $document);
 
 	}
 	/**
@@ -144,12 +144,12 @@ class QuestionsController extends BaseController {
 	public function destroy($id)
 	{
 				// delete
-		$question = Question::find($id);
-		$question->delete();
+		$document = Document::find($id);
+		$document->delete();
 
 		// redirect
-		Session::flash('message', 'Successfully deleted the question!');
-		return Redirect::to('questions');
+		Session::flash('message', 'Successfully deleted the document!');
+		return Redirect::to('documents');
 	}
 
 }
