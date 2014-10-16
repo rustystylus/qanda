@@ -1,0 +1,12 @@
+body {
+    padding-top: 40px;
+}
+ 
+.form-signup, .form-signin {
+    width: 400px;
+    margin: 0 auto;
+}
+.input-block-level{
+	width:100%;
+    margin: 5px 0 5px 0 ;
+}
