@@ -69,7 +69,7 @@ class DocumentsController extends BaseController {
 	{
 		// get the document
 		$document = Document::find($id);
-
+		//$translation = Translation::findByDocument($id);
 		// show the view and pass the document to it
 		return View::make('documents.show')
 			->with('document', $document);

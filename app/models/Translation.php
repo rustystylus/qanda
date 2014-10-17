@@ -11,6 +11,12 @@ class Translation extends Eloquent {
 
 	public $timestamps = true;
 
+    // Translation __belongs_to__ Document
+    public function document()
+    {
+        return $this->belongsTo('Document');
+    }
+
 	public function getTranslationInfo($id)
 	{
         return DB::query('SELECT * FROM translations WHERE id=?',array($id));

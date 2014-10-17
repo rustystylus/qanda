@@ -24,13 +24,13 @@ class TranslationsController extends BaseController {
 	 */
 	public function create($id)
 	{
-		// get the question
-		$question = Question::find($id);
-				return View::make('translations/create')
-		->with('question', $question);
+		// get the document
+		$document = Document::find($id);
+				
+		return View::make('translations/create')
+					->with('document', $document);
 
-		//$this->layout->content = View::make('questions.create');
-
+		//$this->layout->content = View::make('documents.create');
 	}
 
 	/**
@@ -43,7 +43,9 @@ class TranslationsController extends BaseController {
 		// validate
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
-			'text'      => 'required',
+			'document_id'=>'required',	
+			'language_id'=>'required',
+			'content'      => 'required',
 		);
 		$validator = Validator::make(Input::all(), $rules);
 
@@ -55,7 +57,9 @@ class TranslationsController extends BaseController {
 		} else {
 			// store
 			$translation = new Translation;
-			$translation->text      = Input::get('text');
+			$translation->document_id = Input::get('document_id');			
+			$translation->language_id = Input::get('language_id');			
+			$translation->content = Input::get('content');
 			$translation->save();
 
 			// redirect
@@ -88,7 +92,6 @@ class TranslationsController extends BaseController {
 	 */
 	public function edit($id)
 	{
-
 		// get the translation
 		$translation = Translation::find($id);
 
@@ -108,7 +111,9 @@ class TranslationsController extends BaseController {
 		// validate
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
-			'text'      => 'required',
+			'document_id'=>'required',	
+			'language_id'=>'required',
+			'content'      => 'required',
 		);
 		$validator = Validator::make(Input::all(), $rules);
 
@@ -120,7 +125,9 @@ class TranslationsController extends BaseController {
 		} else {
 			// store
 			$translation = Translation::find($id);
-			$translation->text      = Input::get('text');
+			$translation->document_id = Input::get('document_id');			
+			$translation->language_id = Input::get('language_id');			
+			$translation->content = Input::get('content');
 			$translation->save();
 
 			// redirect

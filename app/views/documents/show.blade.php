@@ -33,7 +33,61 @@
 		</p>
 	</div>
 	
-//List of translations
+<table width="100%" class="display" id="translations" cellspacing="0">
+        <thead>
+            <tr>
+            	<th>Id</th>
+            	<th>Document Id</th>
+                <th>Language</th>
+                <th>Content</th>
+                <th>Updated</th>
+                <th>Created</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+            	<th>Id</th>
+            	<th>Document Id</th>
+                <th>Language</th>
+                <th>Content</th>
+                <th>Updated</th>
+                <th>Created</th>                
+            </tr>
+        </tfoot>
+ 
+        <tbody>
+			@foreach ($document->translations as $info)
+				<tr>
+					<td>
+			    		{{$info->id}}
+					</td>
+					<td>
+			    		{{$info->document_id}}
+					</td>					
+					<td>
+			    		{{$info->language_id}}
+					</td>
+					<td>
+			    		{{$info->content}}
+					</td>
+					<td>
+			    		{{date("j-n-Y", strtotime($info->updated_at));}}
+					</td>
+					<td>
+			    		{{date("j-n-Y", strtotime($info->created_at));}}
+					</td>
+					<td>
+						<a href="{{ URL::to('translations/'.$info->id.'/edit') }}">
+						<button type="button" class="btn btn-default">
+							Edit
+						</button>
+						</a>
+					</td>
+				</tr>
+			@endforeach
+
+		</tbody>
+</table>
 
 	<a href="{{ URL::action('TranslationsController@create', [$document->id] ) }}">
 		<button type="button" class="btn btn-default">

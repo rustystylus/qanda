@@ -1,2 +1,7 @@
 
-need crud for clients, translation, original, language, 
+need crud for clients, translation, original, 
+
+language:
+	id, name, flag 
+
+character sets? 

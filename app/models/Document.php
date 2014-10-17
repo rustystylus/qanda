@@ -10,6 +10,12 @@ class Document extends Eloquent {
 
 	public $timestamps = true;
 
+    // Document __has_many__ Translations
+    public function translations()
+    {
+        return $this->hasMany('Translation');
+    }
+
 	public function getDocumentInfo($id)
 	{
         return DB::query('SELECT * FROM documents WHERE id=?',array($id));
