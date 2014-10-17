@@ -9,7 +9,6 @@ class UsersController extends BaseController {
 	    $this->beforeFilter('auth', array('only'=>array('getDashboard')));
 	}
 
-
 	public function getRegister() {
   	  	$this->layout->content = View::make('users.register');
 	}

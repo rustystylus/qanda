@@ -9,7 +9,7 @@ class Translation extends Eloquent {
 	 */
 	protected $table = 'translations';
 
-	public $timestamps = false;
+	public $timestamps = true;
 
 	public function getTranslationInfo($id)
 	{

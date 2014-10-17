@@ -5,24 +5,16 @@
 
 <ul class="list-group">
 	<li class="list-group-item">
-		<a href="{{ URL::to('clients') }}">
+		<a href="{{ URL::to('documents') }}">
 			<button type="button" class="btn btn-default">
-				View All Clients
+				View All Documents
 			</button>
-		</a>
+		</a>	
 	</li>
 	<li class="list-group-item">
-		<a href="{{ URL::to('questions') }}">
+		<a href="{{ URL::to('translations') }}">
 			<button type="button" class="btn btn-default">
-				View All Questions
-			</button>
-		</a>
-	
-	</li>
-	<li class="list-group-item">
-		<a href="{{ URL::to('postings') }}">
-			<button type="button" class="btn btn-default">
-				View All Postings
+				View All Translations
 			</button>
 		</a>
 	

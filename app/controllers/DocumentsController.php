@@ -36,8 +36,8 @@ class DocumentsController extends BaseController {
 		// validate
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
-			'title'       => 'required',
-			'text'      => 'required',
+			'description'       => 'required',
+			'content'      => 'required',
 		);
 		$validator = Validator::make(Input::all(), $rules);
 
@@ -49,8 +49,8 @@ class DocumentsController extends BaseController {
 		} else {
 			// store
 			$document = new Document;
-			$document->title       = Input::get('title');
-			$document->text      = Input::get('text');
+			$document->description       = Input::get('description');
+			$document->content      = Input::get('content');
 			$document->save();
 
 			// redirect
@@ -103,8 +103,8 @@ class DocumentsController extends BaseController {
 		// validate
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
-			'title'       => 'required',
-			'text'      => 'required',
+			'description'       => 'required',
+			'content'      => 'required',
 		);
 		$validator = Validator::make(Input::all(), $rules);
 
@@ -116,8 +116,8 @@ class DocumentsController extends BaseController {
 		} else {
 			// store
 			$document = Document::find($id);
-			$document->title       = Input::get('title');
-			$document->text      = Input::get('text');
+			$document->description       = Input::get('description');
+			$document->content      = Input::get('content');
      		$document->save();
 
 			// redirect
@@ -143,7 +143,7 @@ class DocumentsController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-				// delete
+		// delete
 		$document = Document::find($id);
 		$document->delete();
 

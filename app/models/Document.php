@@ -8,7 +8,7 @@ class Document extends Eloquent {
 	 */
 	protected $table = 'documents';
 
-	public $timestamps = false;
+	public $timestamps = true;
 
 	public function getDocumentInfo($id)
 	{

@@ -1,4 +1,4 @@
-<!-- app/views/questions/show.blade.php -->
+<!-- app/views/documents/show.blade.php -->
 
 <!DOCTYPE html>
 <html>
@@ -11,27 +11,33 @@
 
 <nav class="navbar navbar-inverse">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('questions') }}">Question Alert</a>
+		<a class="navbar-brand" href="{{ URL::to('documents') }}">Document Alert</a>
 	</div>
 	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('questions') }}">View All Questions</a></li>
-		<li><a href="{{ URL::to('questions/create') }}">Create a Question</a>
+		<li><a href="{{ URL::to('documents') }}">View All Documents</a></li>
+		<li><a href="{{ URL::to('documents/create') }}">Create a Document</a>
 	</ul>
 </nav>
 
-<h1>Showing {{ $question->title }}</h1>
-
 	<div class="jumbotron text-center">
-		<h2>{{ $question->title }}</h2>
+		<ul>
+			<li>Document Id: {{ $document->id }}</li>
+			<li>
+				Description: {{ $document->description }}
+			</li>
+		</ul>
+	</div>
+	<div class="container">
 		<p>
-			<strong>Question</strong> {{ $question->text }}<br>
-			<strong>Answer</strong> {{ $question->id }}
+			 {{ $document->content }}
 		</p>
 	</div>
 	
-	<a href="{{ URL::action('AnswersController@create', [$question->id] ) }}">
+//List of translations
+
+	<a href="{{ URL::action('TranslationsController@create', [$document->id] ) }}">
 		<button type="button" class="btn btn-default">
-				Add Answer
+				Add Translation
 		</button>
 	</a>
 </div>

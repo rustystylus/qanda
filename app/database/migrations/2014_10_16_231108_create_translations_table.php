@@ -16,7 +16,7 @@ class CreateTranslationsTable extends Migration {
 		$table->increments('id');
 		$table->integer('document_id');
 		$table->integer('language_id');
-		$table->blob('content');
+		$table->text('content');
 		$table->timestamps();
 	    });
 	}

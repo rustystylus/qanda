@@ -1,68 +1,44 @@
 
-<h1>Questions</h1>
+<h1>Documents</h1>
 
-		<a href="{{ URL::to('questions/create') }}">
+		<a href="{{ URL::to('documents/create') }}">
 			<button type="button" class="btn btn-default">
-				Add Question
+				Add Document
 			</button>
 		</a>	
 
-<table width="100%" class="display" id="questions" cellspacing="0">
+<table width="100%" class="display" id="documents" cellspacing="0">
         <thead>
-            <tr>
-            	
-                <th>Title</th>
-                <th>Question</th>
-                <th>
-						From
-				</th>
-				<th>
-						To
-				</td> 
-				<th>
-						
-				</th>
-           
+            <tr>            	
+                <th>Id</th>
+                <th>Description</th>
+                <th>Document</th>
+				<th>						
+				</th>           
             </tr>
         </thead>
  
         <tfoot>
             <tr>            	
-                <th>Title</th>
-                <th>Question</th>
-                <th>
-						From
-				</th>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Document</th>
 				<th>
-						To
-				</td> 
-				<th>
-						
 				</th>
             </tr>
         </tfoot>
  
         <tbody>
-			@foreach ($questionInfo as $info)
-				<tr data-id={{$info->id}}>					
+			@foreach ($documentInfo as $info)
+				<tr data-id={{$info->id}}>	
 					<td>
-						<ul>
-							<li>
-			    				{{$info->title}}
-							</li>
-							<li>
-			    				{{$info->text}}
-			    			</li>
-			    		</ul>
+						{{$info->id}}
+					</td>				
+					<td>
+		    			{{$info->description}}
 					</td>
 					<td>
-						From
-					</td>
-					<td>
-						To
-					</td>
-					<td>
-						<a href="{{ URL::action('QuestionsController@show', [$info->id] ) }}">
+						<a href="{{ URL::action('DocumentsController@show', [$info->id] ) }}">
 							<button type="button" class="btn btn-default">
 								View
 							</button>
@@ -70,7 +46,7 @@
 			    		
 					</td>
 					<td>
-						<a href="{{ URL::action('QuestionsController@quote', [$info->id] ) }}">
+						<a href="{{ URL::action('DocumentsController@quote', [$info->id] ) }}">
 							<button type="button" class="btn btn-default">
 								Quote
 							</button>
@@ -83,6 +59,6 @@
 </table>
 <script>
     $(document).ready(function() {
-        $('#questions').dataTable();
+        $('#documents').dataTable();
     } );
 </script>
