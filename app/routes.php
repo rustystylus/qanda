@@ -23,3 +23,7 @@ Route::resource('documents', 'DocumentsController');
 Route::get('documents/quote/{id}', array('as' => 'quote', 'uses' => 'DocumentsController@quote'));
 
 Route::resource('translations', 'TranslationsController');
+Route::get('translations/{id}/create', array('as' => 'create', 'uses' => 'TranslationsController@create'));
+Route::post('translations/{id}/store', array('as' => 'store', 'uses' => 'TranslationsController@store'));
+Route::get('translations/{id}/show', array('as' => 'show', 'uses' => 'TranslationsController@show'));
+

@@ -24,6 +24,7 @@ class TranslationsController extends BaseController {
 	 */
 	public function create($id)
 	{
+		
 		// get the document
 		$document = Document::find($id);
 				
@@ -38,12 +39,12 @@ class TranslationsController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($id)
 	{
 		// validate
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
-			'document_id'=>'required',	
+	
 			'language_id'=>'required',
 			'content'      => 'required',
 		);
@@ -51,20 +52,20 @@ class TranslationsController extends BaseController {
 
 		// process the login
 		if ($validator->fails()) {
-			return Redirect::to('translations/create')
+			return Redirect::to('translations/'.$id.'/create')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
 		} else {
 			// store
 			$translation = new Translation;
-			$translation->document_id = Input::get('document_id');			
+			$translation->document_id = $id;			
 			$translation->language_id = Input::get('language_id');			
 			$translation->content = Input::get('content');
 			$translation->save();
 
 			// redirect
 			Session::flash('message', 'Successfully created translation!');
-			return Redirect::to('translations');
+			return Redirect::to('documents/'.$id);
 		}
 	}
 

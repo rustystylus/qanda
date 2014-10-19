@@ -11,7 +11,7 @@
 
 <nav class="navbar navbar-inverse">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('documents') }}">Document Alert</a>
+		<a class="navbar-brand" href="{{ URL::to('documents') }}">Documents</a>
 	</div>
 	<ul class="nav navbar-nav">
 		<li><a href="{{ URL::to('documents') }}">View All Documents</a></li>
@@ -19,11 +19,18 @@
 	</ul>
 </nav>
 
-	<div class="jumbotron text-center">
+	<div class="container">
 		<ul>
 			<li>Document Id: {{ $document->id }}</li>
+			<li>User Id: {{ $document->user_id }}</li>
 			<li>
 				Description: {{ $document->description }}
+			</li>
+			<li>
+				Created: {{ $document->created_at }}
+			</li>
+			<li>
+				Updated: {{ $document->updated_at }}
 			</li>
 		</ul>
 	</div>
@@ -32,7 +39,7 @@
 			 {{ $document->content }}
 		</p>
 	</div>
-	
+<h2>Translations of this document</h2>	
 <table width="100%" class="display" id="translations" cellspacing="0">
         <thead>
             <tr>
@@ -45,14 +52,6 @@
             </tr>
         </thead>
         <tfoot>
-            <tr>
-            	<th>Id</th>
-            	<th>Document Id</th>
-                <th>Language</th>
-                <th>Content</th>
-                <th>Updated</th>
-                <th>Created</th>                
-            </tr>
         </tfoot>
  
         <tbody>
@@ -77,9 +76,9 @@
 			    		{{date("j-n-Y", strtotime($info->created_at));}}
 					</td>
 					<td>
-						<a href="{{ URL::to('translations/'.$info->id.'/edit') }}">
+						<a href="{{ URL::to('translations/'.$info->id.'/show') }}">
 						<button type="button" class="btn btn-default">
-							Edit
+							View
 						</button>
 						</a>
 					</td>
@@ -89,11 +88,18 @@
 		</tbody>
 </table>
 
-	<a href="{{ URL::action('TranslationsController@create', [$document->id] ) }}">
+	<a href="{{ URL::to('translations/'. $document->id.'/create' ) }}">
 		<button type="button" class="btn btn-default">
 				Add Translation
 		</button>
 	</a>
 </div>
+<script>
+    $(document).ready(function() {
+        $('#translations').dataTable();
+        $( "#datepicker" ).datepicker();
+    } );
+
+</script>
 </body>
 </html>

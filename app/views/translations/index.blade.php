@@ -7,7 +7,7 @@
             	<th>Id</th>
             	<th>Document Id</th>
                 <th>Language</th>
-                <th>Comment</th>
+                <th>Content</th>
                 <th>Updated</th>
                 <th>Created</th>
             </tr>
@@ -17,7 +17,7 @@
             	<th>Id</th>
             	<th>Document Id</th>
                 <th>Language</th>
-                <th>Comment</th>
+                <th>Content</th>
                 <th>Updated</th>
                 <th>Created</th>                
             </tr>
@@ -36,7 +36,7 @@
 			    		{{$info->language_id}}
 					</td>
 					<td>
-			    		{{$info->Comment}}
+			    		{{$info->content}}
 					</td>
 					<td>
 			    		{{date("j-n-Y", strtotime($info->updated_at));}}
