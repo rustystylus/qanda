@@ -1,9 +1,9 @@
-<!-- app/views/questions/edit.blade.php -->
+<!-- app/views/documents/edit.blade.php -->
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>edit question</title>
+	<title>edit document</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -11,20 +11,20 @@
 
 <nav class="navbar navbar-inverse">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('questions') }}">Question Alert</a>
+		<a class="navbar-brand" href="{{ URL::to('documents') }}">Question Alert</a>
 	</div>
 	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('questions') }}">View All Questions</a></li>
-		<li><a href="{{ URL::to('questions/create') }}">Create a Question</a>
+		<li><a href="{{ URL::to('documents') }}">View All Questions</a></li>
+		<li><a href="{{ URL::to('documents/create') }}">Create a Question</a>
 	</ul>
 </nav>
 
-<h1>Edit {{ $question->title }}</h1>
+<h1>Edit {{ $document->title }}</h1>
 
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
 
-{{ Form::model($question, array('route' => array('questions.update', $question->id), 'method' => 'PUT')) }}
+{{ Form::model($document, array('route' => array('documents.update', $document->id), 'method' => 'PUT')) }}
 
 	<div class="form-group">
 		{{ Form::label('title', 'Title') }}
@@ -32,11 +32,11 @@
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('text', 'Text') }}
-		{{ Form::text('text', null, array('class' => 'form-control')) }}
+		{{ Form::label('content', 'Content') }}
+		{{ Form::text('content', null, array('class' => 'form-control')) }}
 	</div>
 
-	{{ Form::submit('Edit the Question!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Edit the Document', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

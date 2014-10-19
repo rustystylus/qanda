@@ -39,10 +39,10 @@
 			    		{{$info->content}}
 					</td>
 					<td>
-			    		{{date("j-n-Y", strtotime($info->updated_at));}}
+			    		{{date("j-n-Y H:m", strtotime($info->updated_at));}}
 					</td>
 					<td>
-			    		{{date("j-n-Y", strtotime($info->created_at));}}
+			    		{{date("j-n-Y H:m", strtotime($info->created_at));}}
 					</td>
 					<td>
 						<a href="{{ URL::to('translations/'.$info->id.'/edit') }}">

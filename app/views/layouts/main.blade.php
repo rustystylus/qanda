@@ -25,6 +25,7 @@
                     <li>{{ HTML::link('users/login', 'Login') }}</li>  
                 @else
                     <li>{{ HTML::link('users/logout', 'logout') }}</li>
+                    <li>{{ HTML::link('users/dashboard', 'Dashboard') }}</li>
                 @endif 
           </ul> 
         </div>

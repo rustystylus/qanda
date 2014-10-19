@@ -12,19 +12,18 @@
             <tr>            	
                 <th>Id</th>
                 <th>Description</th>
-                <th>Document</th>
-				<th>						
-				</th>           
+                <th>Document</th> 
+                <th>Updated</th>
+                <th>Created</th>   
             </tr>
         </thead>
- 
         <tfoot>
             <tr>            	
                 <th>Id</th>
                 <th>Description</th>
                 <th>Document</th>
-				<th>
-				</th>
+                <th>Updated</th>
+                <th>Created</th>
             </tr>
         </tfoot>
  
@@ -42,16 +41,13 @@
 							<button type="button" class="btn btn-default">
 								View
 							</button>
-						</a>
-			    		
+						</a> 		
 					</td>
 					<td>
-						<a href="{{ URL::action('DocumentsController@quote', [$info->id] ) }}">
-							<button type="button" class="btn btn-default">
-								Quote
-							</button>
-						</a>
-			    		
+			    		{{date("j-n-Y H:m", strtotime($info->updated_at));}}
+					</td>
+					<td>
+			    		{{date("j-n-Y H:m", strtotime($info->created_at));}}
 					</td>
 				</tr>
 			@endforeach
