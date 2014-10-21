@@ -1,10 +1,7 @@
 
 
 <h1>Create a document</h1>
-	<ul class="btn btn-default">
-		<li><a href="{{ URL::to('documents') }}">View All Documents</a></li>
-	</ul>
-<!-- if there are creation errors, they will show here -->
+
 {{ HTML::ul($errors->all()) }}
 
 {{ Form::open(array('url' => 'documents')) }}

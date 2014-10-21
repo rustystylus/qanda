@@ -27,11 +27,9 @@ class TranslationsController extends BaseController {
 		
 		// get the document
 		$document = Document::find($id);
-				
-		return View::make('translations/create')
-					->with('document', $document);
 
-		//$this->layout->content = View::make('documents.create');
+		$this->layout->content = View::make('translations/create')
+					->with('document', $document);
 	}
 
 	/**
@@ -81,7 +79,7 @@ class TranslationsController extends BaseController {
 		$translation = Translation::find($id);
 
 		// show the view and pass the translation to it
-		return View::make('translations.show')
+		$this->layout->content = View::make('translations.show')
 			->with('translation', $translation);
 	}
 
@@ -97,7 +95,7 @@ class TranslationsController extends BaseController {
 		$translation = Translation::find($id);
 
 		// show the edit form and pass the translation
-		return View::make('translations.edit')
+		$this->layout->content = View::make('translations.edit')
 			->with('translation', $translation);
 	}
 

@@ -38,7 +38,7 @@ class DocumentsController extends BaseController {
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
 			'user_id'		=>	'required',
-			'description'       => 'required',
+			'description'   => 'required',
 			'content'      => 'required',
 		);
 		$validator = Validator::make(Input::all(), $rules);
@@ -74,7 +74,7 @@ class DocumentsController extends BaseController {
 		$document = Document::find($id);
 		//$translation = Translation::findByDocument($id);
 		// show the view and pass the document to it
-		return View::make('documents.show')
+		$this->layout->content = View::make('documents.show')
 			->with('document', $document);
 
 	}
@@ -91,7 +91,7 @@ class DocumentsController extends BaseController {
 		$document = Document::find($id);
 
 		// show the edit form and pass the document
-		return View::make('documents.edit')
+		$this->layout->content = View::make('documents.edit')
 			->with('document', $document);
 	}
 
@@ -112,11 +112,14 @@ class DocumentsController extends BaseController {
 		$validator = Validator::make(Input::all(), $rules);
 
 		// process the login
-		if ($validator->fails()) {
+		if ($validator->fails()) 
+		{
 			return Redirect::to('documents/' . $id . '/edit')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
-		} else {
+		} 
+		else 
+		{
 			// store
 			$document = Document::find($id);
 			$document->description       = Input::get('description');
@@ -124,7 +127,7 @@ class DocumentsController extends BaseController {
      		$document->save();
 
 			// redirect
-			Session::flash('message', 'Successfully updated document!');
+			Session::flash('message', 'Successfully updated document');
 			return Redirect::to('documents');
 		}
 	}
@@ -134,7 +137,7 @@ class DocumentsController extends BaseController {
 		$document = Document::find($id);
 
 		// show the view and pass the document to it
-		return View::make('documents.quote')
+		$this->layout->content = View::make('documents.quote')
 					->with('document', $document);
 
 	}
@@ -151,7 +154,7 @@ class DocumentsController extends BaseController {
 		$document->delete();
 
 		// redirect
-		Session::flash('message', 'Successfully deleted the document!');
+		Session::flash('message', 'Successfully deleted the document');
 		return Redirect::to('documents');
 	}
 

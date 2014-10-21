@@ -1,26 +1,7 @@
-<!-- app/views/documents/show.blade.php -->
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>show</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
 <div class="container">
 
-<nav class="navbar navbar-inverse">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('documents') }}">Documents</a>
-	</div>
-	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('documents') }}">View All Documents</a></li>
-		<li><a href="{{ URL::to('documents/create') }}">Create a Document</a>
-	</ul>
-</nav>
-
-	<div class="container">
-		<ul>
+<div class="row">
+		<ul class="nav nav-sidebar">
 			<li>Document Id: {{ $document->id }}</li>
 			<li>User Id: {{ $document->user_id }}</li>
 			<li>
@@ -33,12 +14,13 @@
 				Updated: {{ $document->updated_at }}
 			</li>
 		</ul>
-	</div>
-	<div class="jumbotron">
+</div>
+</div>
+<div class="jumbotron">
 		<p>
 			 {{ $document->content }}
 		</p>
-	</div>
+</div>
 <h2>Translations of this document</h2>	
 <table width="100%" class="display" id="translations" cellspacing="0">
         <thead>
@@ -87,7 +69,7 @@
 
 		</tbody>
 </table>
-
+<div class="container">
 	<a href="{{ URL::to('translations/'. $document->id.'/create' ) }}">
 		<button type="button" class="btn btn-default">
 				Add Translation
@@ -97,9 +79,6 @@
 <script>
     $(document).ready(function() {
         $('#translations').dataTable();
-        $( "#datepicker" ).datepicker();
     } );
 
 </script>
-</body>
-</html>

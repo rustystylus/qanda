@@ -6,8 +6,7 @@
  
     <title>Translate</title>
     
-    {{ HTML::style('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css') }} 
-    
+    {{ HTML::style('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css') }}     
     {{ HTML::script('js/jquery.js')}}
     {{ HTML::script('js/jquery.dataTables.min.js')}}
     {{ HTML::style('css/jquery.dataTables.css') }}
@@ -27,11 +26,15 @@
                 @if(!Auth::check())
                     <li>{{ HTML::link('users/register', 'Register') }}</li>  
                     <li>{{ HTML::link('users/login', 'Login') }}</li>  
-                @else
-                    <li>{{ HTML::link('users/logout', 'logout') }}</li>
+                @else                    
                     <li>{{ HTML::link('users/dashboard', 'Dashboard') }}</li>
                 @endif 
           </ul> 
+          <ul class="nav navbar-nav navbar-right">
+            @if(Auth::check())
+                <li>{{ HTML::link('users/logout', 'logout') }}</li>
+            @endif
+          </ul>
         </div>
     </div>
 
