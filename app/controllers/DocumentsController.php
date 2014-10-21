@@ -23,7 +23,8 @@ class DocumentsController extends BaseController {
 	 */
 	public function create()
 	{
-		$this->layout->content = View::make('documents.create');
+		$this->layout->content = View::make('documents.create')
+									->with('user', Auth::user());
 	}
 
 	/**
@@ -36,6 +37,7 @@ class DocumentsController extends BaseController {
 		// validate
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
+			'user_id'		=>	'required',
 			'description'       => 'required',
 			'content'      => 'required',
 		);
@@ -49,6 +51,7 @@ class DocumentsController extends BaseController {
 		} else {
 			// store
 			$document = new Document;
+			$document->user_id       = Input::get('user_id');
 			$document->description       = Input::get('description');
 			$document->content      = Input::get('content');
 			$document->save();

@@ -36,7 +36,7 @@
 			    		{{$info->language_id}}
 					</td>
 					<td>
-			    		{{$info->content}}
+			    		{{substr( $info->content, 0, 50)."...";}}
 					</td>
 					<td>
 			    		{{date("j-n-Y H:m", strtotime($info->updated_at));}}

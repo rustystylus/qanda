@@ -3,14 +3,13 @@
 <h1>Create a document</h1>
 	<ul class="btn btn-default">
 		<li><a href="{{ URL::to('documents') }}">View All Documents</a></li>
-		<li><a href="{{ URL::to('translations/1/create') }}">Create an translation for document 1</a></li>	
 	</ul>
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
 
 {{ Form::open(array('url' => 'documents')) }}
 
-	//user_id
+	{{ Form::hidden('user_id', $user->id, array('class' => 'form-control')) }}
 
 	<div class="form-group">
 		{{ Form::label('description', 'Description') }}
@@ -19,7 +18,7 @@
 
 	<div class="form-group">
 		{{ Form::label('content', 'Content') }}
-		{{ Form::text('content', Input::old('content'), array('class' => 'form-control')) }}
+		{{ Form::textarea('content', Input::old('content'), array('class' => 'form-control')) }}
 	</div>
 
 	{{ Form::submit('Create the content', array('class' => 'btn btn-primary')) }}

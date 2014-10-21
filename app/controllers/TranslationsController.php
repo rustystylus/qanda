@@ -46,7 +46,7 @@ class TranslationsController extends BaseController {
 		$rules = array(
 	
 			'language_id'=>'required',
-			'content'      => 'required',
+		//	'content'      => 'required',
 		);
 		$validator = Validator::make(Input::all(), $rules);
 
@@ -60,7 +60,7 @@ class TranslationsController extends BaseController {
 			$translation = new Translation;
 			$translation->document_id = $id;			
 			$translation->language_id = Input::get('language_id');			
-			$translation->content = Input::get('content');
+		//	$translation->content = Input::get('content');
 			$translation->save();
 
 			// redirect

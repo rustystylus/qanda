@@ -21,7 +21,6 @@
 <h1>Showing {{ $translation->id }}</h1>
 
 	<div class="jumbotron text-center">
-		<h2>{{ $translation->id }}</h2>
 		<p>
 			 {{ $translation->content }}<br>
 		</p>

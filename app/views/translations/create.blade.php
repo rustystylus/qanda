@@ -17,9 +17,14 @@
 		<li><a href="{{ URL::to('translations') }}">View All Translations</a></li>
 	</ul>
 </nav>
-<p>{{$document->description}}</p>
-<h2>Original</h2>
-<p>{{$document->content}}</p>
+
+
+<div class="jumbotron">
+	<h2>Original</h2>
+	<h3>{{$document->description}}</h3>
+	<p>{{$document->content}}</p>
+</div>
+
 <h1>Create a Translation</h1>
 
 <!-- if there are creation errors, they will show here -->
@@ -30,8 +35,8 @@
 	<div class="form-group">
 		{{ Form::label('LangId', 'LangId') }}
 		{{ Form::text('language_id', Input::old('language_id'), array('class' => 'form-control')) }}
-		{{ Form::label('Content', 'Content') }}
-		{{ Form::text('content', Input::old('content'), array('class' => 'form-control')) }}
+	<!--	{{ Form::label('Content', 'Content') }} -->
+	<!--	{{ Form::textarea('content', Input::old('content'), array('class' => 'form-control')) }}-->
 
 	</div>
 

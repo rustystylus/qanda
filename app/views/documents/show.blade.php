@@ -34,7 +34,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="container">
+	<div class="jumbotron">
 		<p>
 			 {{ $document->content }}
 		</p>
@@ -58,16 +58,16 @@
 			@foreach ($document->translations as $info)
 				<tr>
 					<td>
-			    		{{$info->id}}
+			    		{{$info->id;}}
 					</td>
 					<td>
-			    		{{$info->document_id}}
+			    		{{$info->document_id;}}
 					</td>					
 					<td>
-			    		{{$info->language_id}}
+			    		{{$info->language_id;}}
 					</td>
 					<td>
-			    		{{$info->content}}
+			    		{{substr( $info->content, 0, 50)."...";}}
 					</td>
 					<td>
 			    		{{date("j-n-Y", strtotime($info->updated_at));}}

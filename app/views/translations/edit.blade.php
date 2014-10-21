@@ -18,26 +18,26 @@
 		<li><a href="{{ URL::to('translations') }}">View All Translations</a></li>
 	</ul>
 </nav>
-
 <h1>Edit {{ $translation->id }}</h1>
+<div class="jumbotron">
+	<h2>Original</h2>
+	<h3>{{$translation->document->description}}</h3>
+	<p>{{$translation->document->content}}</p>
+</div>
+
 
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
 
 {{ Form::model($translation, array('route' => array('translations.update', $translation->id), 'method' => 'PUT')) }}
 
-	<div class="form-group">
-		{{ Form::label('Doc Id', 'Doc Id') }}
-		{{ Form::text('document_id', Input::old($translation->document_id), array('class' => 'form-control')) }}
-	</div>
-	<div class="form-group">
-		{{ Form::label('Lang Id', 'Lang Id') }}
-		{{ Form::text('language_id', Input::old($translation->language_id), array('class' => 'form-control')) }}
-	</div>
+		{{ Form::hidden('document_id', Input::old($translation->document_id), array('class' => 'form-control')) }}
+
+		{{ Form::hidden('language_id', Input::old($translation->language_id), array('class' => 'form-control')) }}
 
 	<div class="form-group">
 		{{ Form::label('Content', 'Content') }}
-		{{ Form::text('content', Input::old($translation->content), array('class' => 'form-control')) }}
+		{{ Form::textarea('content', Input::old($translation->content), array('class' => 'form-control')) }}
 	</div>
 
 	{{ Form::submit('Edit the Translation', array('class' => 'btn btn-primary')) }}
