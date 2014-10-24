@@ -12,8 +12,8 @@ class DocumentsController extends BaseController {
 
 	public function index()
 	{
-		$documentInfo = Document::all();
-  	  	$this->layout->content = View::make('documents.index')->with('documentInfo',$documentInfo);
+		$documentInfo = User::find(Auth::user()->id)->documents;
+  	  	$this->layout->content = View::make('documents.index')->with('documentInfo', $documentInfo);
 	}
 
 	/**
@@ -72,7 +72,7 @@ class DocumentsController extends BaseController {
 	{
 		// get the document
 		$document = Document::find($id);
-		//$translation = Translation::findByDocument($id);
+
 		// show the view and pass the document to it
 		$this->layout->content = View::make('documents.show')
 			->with('document', $document);
