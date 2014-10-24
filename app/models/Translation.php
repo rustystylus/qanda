@@ -10,6 +10,12 @@ class Translation extends Eloquent {
 	protected $table = 'translations';
 
 	public $timestamps = true;
+	
+	//Tranlation __belongs_to__User
+	public function user()
+	{
+		return $this->belongsTo('User');
+	}
 
     // Translation __belongs_to__ Document
     public function document()

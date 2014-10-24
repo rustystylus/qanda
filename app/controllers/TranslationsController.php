@@ -42,7 +42,6 @@ class TranslationsController extends BaseController {
 		// validate
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
-	
 			'language_id'=>'required',
 		//	'content'      => 'required',
 		);
@@ -56,6 +55,7 @@ class TranslationsController extends BaseController {
 		} else {
 			// store
 			$translation = new Translation;
+			$translation->user_id = Auth::user()->id;
 			$translation->document_id = $id;			
 			$translation->language_id = Input::get('language_id');			
 		//	$translation->content = Input::get('content');
@@ -124,6 +124,7 @@ class TranslationsController extends BaseController {
 		} else {
 			// store
 			$translation = Translation::find($id);
+			$translation->user_id = Auth::user()->id;
 			$translation->document_id = Input::get('document_id');			
 			$translation->language_id = Input::get('language_id');			
 			$translation->content = Input::get('content');
