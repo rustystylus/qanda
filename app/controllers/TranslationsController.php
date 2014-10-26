@@ -23,8 +23,7 @@ class TranslationsController extends BaseController {
 	 * @return Response
 	 */
 	public function create($id)
-	{
-		
+	{		
 		// get the document
 		$document = Document::find($id);
 
@@ -58,7 +57,6 @@ class TranslationsController extends BaseController {
 			$translation->user_id = Auth::user()->id;
 			$translation->document_id = $id;			
 			$translation->language_id = Input::get('language_id');			
-		//	$translation->content = Input::get('content');
 			$translation->save();
 
 			// redirect
