@@ -1,20 +1,20 @@
 <?php
-class DocumentTableSeeder extends Seeder {
+class QuestionTableSeeder extends Seeder {
  
     public function run()
     {
-        DB::table('documents')->delete();
+        DB::table('questions')->delete();
  
-        Document::create(
+        Question::create(
         		array(
-		            'user_id' => '2',
+		            'user_id' => '1',
 		            'description' => 'Test description 1',
 		            'content' => 'This is the content of document 1 as entered by the client.',
         		)
         );
-        Document::create(
+        Question::create(
                 array(
-                    'user_id' => '2',
+                    'user_id' => '1',
                     'description' => 'Newspaper Article',
                     'content' => 'This is the content of document 2 as entered by the client.',
                 )

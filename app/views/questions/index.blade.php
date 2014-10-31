@@ -1,18 +1,18 @@
 
-<h1>Documents</h1>
+<h1>Questions</h1>
 
-		<a href="{{ URL::to('documents/create') }}">
-			<button type="button" class="btn btn-default">
-				Add Document
-			</button>
-		</a>	
+	<a href="{{ URL::to('questions/create') }}">
+		<button type="button" class="btn btn-default">
+			Add Question
+		</button>
+	</a>	
 
-<table width="100%" class="display" id="documents" cellspacing="0">
+<table width="100%" class="display" id="questions" cellspacing="0">
         <thead>
             <tr>            	
                 <th>Id</th>
                 <th>Description</th>
-                <th>Document</th> 
+                <th>Question</th> 
                 <th>Updated</th>
                 <th>Created</th>   
             </tr>
@@ -21,14 +21,14 @@
             <tr>            	
                 <th>Id</th>
                 <th>Description</th>
-                <th>Document</th>
+                <th>Question</th>
                 <th>Updated</th>
                 <th>Created</th>
             </tr>
         </tfoot>
  
         <tbody>
-			@foreach ($documentInfo as $info)
+			@foreach ($questionInfo as $info)
 				<tr data-id={{$info->id}}>	
 					<td>
 						{{$info->id}}
@@ -37,7 +37,7 @@
 		    			{{$info->description}}
 					</td>
 					<td>
-						<a href="{{ URL::action('DocumentsController@show', [$info->id] ) }}">
+						<a href="{{ URL::action('QuestionsController@show', [$info->id] ) }}">
 							<button type="button" class="btn btn-default">
 								View
 							</button>
@@ -55,6 +55,6 @@
 </table>
 <script>
     $(document).ready(function() {
-        $('#documents').dataTable();
+        $('#questions').dataTable();
     } );
 </script>

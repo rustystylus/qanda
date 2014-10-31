@@ -2,16 +2,16 @@
 <h1>Dashboard</h1>
 <ul class="list-group">
 	<li class="list-group-item">
-		<a href="{{ URL::to('documents') }}">
+		<a href="{{ URL::to('questions') }}">
 			<button type="button" class="btn btn-default">
-				View All Documents
+				View All Questions
 			</button>
 		</a>	
 	</li>
 	<li class="list-group-item">
-		<a href="{{ URL::to('translations') }}">
+		<a href="{{ URL::to('answers') }}">
 			<button type="button" class="btn btn-default">
-				View All Translations
+				View All Answers
 			</button>
 		</a>	
 	</li>
