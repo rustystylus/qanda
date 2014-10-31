@@ -1,0 +1,61 @@
+
+<h1>Answers</h1>
+
+<table width="100%" class="display" id="answers" cellspacing="0">
+        <thead>
+            <tr>
+            	<th>Id</th>
+            	<th>Question Id</th>
+                <th>Content</th>
+                <th>Updated</th>
+                <th>Created</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+            	<th>Id</th>
+            	<th>Question Id</th>
+                <th>Content</th>
+                <th>Updated</th>
+                <th>Created</th>                
+            </tr>
+        </tfoot>
+ 
+        <tbody>
+			@foreach ($answerInfo as $info)
+				<tr>
+					<td>
+			    		{{$info->id}}
+					</td>
+					<td>
+			    		{{$info->question_id}}
+					</td>					
+					<td>
+			    		{{substr( $info->content, 0, 50)."...";}}
+					</td>
+					<td>
+			    		{{date("j-n-Y H:m", strtotime($info->updated_at));}}
+					</td>
+					<td>
+			    		{{date("j-n-Y H:m", strtotime($info->created_at));}}
+					</td>
+					<td>
+						<a href="{{ URL::to('answers/'.$info->id.'/edit') }}">
+						<button type="button" class="btn btn-default">
+							Edit
+						</button>
+						</a>
+					</td>
+				</tr>
+			@endforeach
+
+		</tbody>
+</table>
+
+<script>
+    $(document).ready(function() {
+        $('#translations').dataTable();
+        $( "#datepicker" ).datepicker();
+    } );
+
+</script>
