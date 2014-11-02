@@ -1,21 +1,18 @@
 
-<h1>Clients</h1>
+<h1>Tags</h1>
 
-		<a href="{{ URL::to('clients/create') }}">
+		<a href="{{ URL::to('tags/create') }}">
 			<button type="button" class="btn btn-default">
-				Add Client
+				Add Tag
 			</button>
 		</a>	
 
-<table width="100%" class="display" id="clients" cellspacing="0">
+<table width="100%" class="display" id="tags" cellspacing="0">
         <thead>
             <tr>
             	<th>ID</th>
                 <th>Name</th>
-                <th>Address1</th>
-                <th>Address2</th>
-                <th>Post Code</th>
-                <th>DOB</th>
+
             </tr>
         </thead>
  
@@ -23,40 +20,26 @@
             <tr>
             	<th>ID</th>
                 <th>Name</th>
-                <th>Address1</th>
-                <th>Address2</th>
-                <th>Post Code</th>
-                <th>DOB</th>
+
             </tr>
         </tfoot>
  
         <tbody>
-			@foreach ($clientInfo as $info)
+			@foreach ($tagInfo as $info)
 				<tr>
 					<td>
-			    		{{$info->CLIENTID}}
+			    		{{$info->id}}
 					</td>
 					<td>
-			    		{{$info->NAME}}
+			    		{{$info->text}}
 					</td>
-					<td>
-			    		{{$info->ADDRESS1}}
-					</td>
-					<td>
-			    		{{$info->ADDRESS2}}
-					</td>
-					<td>
-			    		{{$info->POSTCODE}}
-					</td>
-					<td>
-			    		{{$info->DOB}}
-					</td>
+
 				</tr>
 			@endforeach
 		</tbody>
 </table>
 <script>
     $(document).ready(function() {
-        $('#clients').dataTable();
+        $('#tags').dataTable();
     } );
 </script>

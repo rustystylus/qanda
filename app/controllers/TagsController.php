@@ -23,7 +23,7 @@ class TagsController extends BaseController {
 	 */
 	public function create()
 	{
-		return View::make('tags.create');
+        $this->layout->content = View::make('tags.create');
 	}
 
 	/**

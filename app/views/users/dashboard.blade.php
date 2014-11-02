@@ -15,4 +15,11 @@
 			</button>
 		</a>	
 	</li>
+	<li class="list-group-item">
+    		<a href="{{ URL::to('tags') }}">
+    			<button type="button" class="btn btn-default">
+    				View All Tags
+    			</button>
+    		</a>
+    </li>
 </ul>
