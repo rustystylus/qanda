@@ -21,50 +21,48 @@
 			 {{ $question->content }}
 		</p>
 </div>
-<h2>Answers for the question</h2>	
-<table width="100%" class="display" id="answers" cellspacing="0">
-        <thead>
-            <tr>
-            	<th>Id</th>
-            	<th>question Id</th>
-                <th>Content</th>
-                <th>Updated</th>
-                <th>Created</th>
-            </tr>
-        </thead>
-        <tfoot>
-        </tfoot>
- 
-        <tbody>
+
+<dl width="100%" class="display" id="answers">
+            <li>
+                <ul>
+            	<li>Id</li>
+            	<li>question Id</li>
+                <li>Content</li>
+                <li>Updated</li>
+                <li>Created</li>
+                </ul>
+            </li>
+
+
 		@foreach ($question->answers as $info)
-		<tr>
-					<td>
+		<ul>
+					<li>
 			    		{{$info->id;}}
-					</td>
-					<td>
+					</li>
+					<li>
 			    		{{$info->question_id;}}
-					</td>					
-					<td>
+					</li>					
+					<li>
 			    		{{substr( $info->content, 0, 50)."...";}}
-					</td>
-					<td>
+					</li>
+					<li>
 			    		{{date("j-n-Y", strtotime($info->updated_at));}}
-					</td>
-					<td>
+					</li>
+					<li>
 			    		{{date("j-n-Y", strtotime($info->created_at));}}
-					</td>
-					<td>
+					</li>
+					<li>
 						<a href="{{ URL::to('answers/'.$info->id.'/show') }}">
 						<button type="button" class="btn btn-default">
 							View
 						</button>
 						</a>
-					</td>
-		</tr>
+					</li>
+		</ul>
 			@endforeach
 
-		</tbody>
-</table>
+		
+</dl>
 <div class="container">
 	<a href="{{ URL::to('answers/'. $question->id.'/create' ) }}">
 		<button type="button" class="btn btn-default">
@@ -74,7 +72,7 @@
 </div>
 <script>
     $(question).ready(function() {
-        $('#translations').dataTable();
+        
     } );
 
 </script>

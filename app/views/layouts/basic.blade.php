@@ -22,6 +22,7 @@
             </div>
         </div>
         <div class="collapse navbar-collapse">
+          <div class="container">
           <ul class="nav navbar-nav">
                 @if(!Auth::check())
                     <li>{{ HTML::link('users/register', 'Register') }}</li>  
@@ -35,13 +36,15 @@
                 <li>{{ HTML::link('users/logout', 'logout') }}</li>
             @endif
           </ul>
+          </div>
         </div>
     </div>
 
 
-
+    <div class="container">
     <div class="col-md-12">
        {{ $content }}
+    </div>
     </div>
  
 

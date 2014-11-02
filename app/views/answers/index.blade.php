@@ -9,6 +9,7 @@
                 <th>Content</th>
                 <th>Updated</th>
                 <th>Created</th>
+                <th></th>
             </tr>
         </thead>
         <tfoot>
@@ -17,7 +18,8 @@
             	<th>Question Id</th>
                 <th>Content</th>
                 <th>Updated</th>
-                <th>Created</th>                
+                <th>Created</th>
+                 <th></th>
             </tr>
         </tfoot>
  
@@ -54,8 +56,7 @@
 
 <script>
     $(document).ready(function() {
-        $('#translations').dataTable();
-        $( "#datepicker" ).datepicker();
+        $('#answers').dataTable();
     } );
 
 </script>
