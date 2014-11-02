@@ -54,8 +54,8 @@ class AnswersController extends BaseController {
 			// store
 			$answer = new Answer;
 			$answer->user_id = Auth::user()->id;
-			$answer->question_id = $id;			
-			$answer->language_id = Input::get('language_id');			
+			$answer->question_id = $id;
+            $answer->content = Input::get('content');
 			$answer->save();
 
 			// redirect

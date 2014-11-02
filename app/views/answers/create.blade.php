@@ -15,13 +15,12 @@
 {{ Form::open(array('url' => 'answers/'.$question->id.'/store'))}} 
 
 	<div class="form-group">
-		{{ Form::label('LangId', 'LangId') }}
-	<!--	{{ Form::label('Content', 'Content') }} -->
-	<!--	{{ Form::textarea('content', Input::old('content'), array('class' => 'form-control')) }}-->
+		{{ Form::label('Content', 'Content') }}
+		{{ Form::textarea('content', Input::old('content'), array('class' => 'form-control')) }}
 
 	</div>
 
-	{{ Form::submit('Create the Translation', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Create the Answer', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 
