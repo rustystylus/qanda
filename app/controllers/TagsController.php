@@ -23,6 +23,9 @@ class TagsController extends BaseController {
 	 */
 	public function create()
 	{
+        if (! Auth::check()) {
+            return Redirect::to('users/login');
+        }
         $this->layout->content = View::make('tags.create');
 	}
 

@@ -12,7 +12,10 @@ class QuestionsController extends BaseController {
 
 	public function index()
 	{
-		$questionInfo = User::find(Auth::user()->id)->questions;
+        if (! Auth::check()) {
+            return Redirect::to('users/login');
+        }
+        $questionInfo = User::find(Auth::user()->id)->questions;
   	  	$this->layout->content = View::make('questions.index')->with('questionInfo', $questionInfo);
 	}
 
