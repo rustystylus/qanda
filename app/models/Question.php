@@ -24,11 +24,11 @@ class Question extends Eloquent {
     // Question __has_many__ Tags
     public function tags()
     {
-        return $this->hasMany('Tag');
+        return $this->belongsToMany('Tag','question_tag','question_id','tag_id');
     }
-	public function getQuestionInfo($id)
+/*	public function getQuestionInfo($id)
 	{
        return DB::query('SELECT * FROM questions WHERE id=?',array($id));
     }
-
+*/
 }
