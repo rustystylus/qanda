@@ -13,7 +13,7 @@ class Tag extends Eloquent {
     // Rag __has_many__ Question
     public function question()
     {
-        return $this->hasAndBelongsToMany('Question');
+        return $this->belongsToMany('Question');
     }
 	public function getTagInfo($text)
 	{
