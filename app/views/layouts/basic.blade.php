@@ -20,7 +20,7 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="nav navbar-header">    
-		<a href="/" class="brand">
+		<a href="http://127.0.0.1/qanda/public/users/dashboard" class="brand">
 		<img alt="" src="http://127.0.0.1/qanda/public/logo.png" />
 		</a>	   
             </div>    
@@ -36,11 +36,11 @@
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Apps <b class="caret"></b></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a role="menuitem" href="#">Qanda</a></li>
-                            <li><a role="menuitem" href="#">Todoshedodowah</a></li>
-                            <li><a role="menuitem" href="#">Fab</a></li>
+                            <li>{{ HTML::link('users/qanda', 'Qanda') }}</li>
+                            <li>{{ HTML::link('users/todo', 'ToDo') }}</li>
+                            <li>{{ HTML::link('users/restapi', 'RestAPI') }}</li>
                             <li class="divider"></li>
-                            <li><a role="menuitem" href="#">Trash</a></li>
+                            <li>{{ HTML::link('#', 'Trash') }}</li>
                         </ul>
                     </li>
                 @endif 

@@ -7,25 +7,23 @@
     <title>Qanda</title>
     <!-- Latest compiled and minified CSS -->
     {{ HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css') }}
-
     <!-- Optional theme -->
     {{ HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css')}}
-     {{ HTML::script('js/jquery.js')}}
-    {{ HTML::script('js/jquery.dataTables.min.js')}}
+    {{ HTML::script('js/jquery.js')}}
+
     <!-- Latest compiled and minified JavaScript -->
     {{ HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js')}}
 
     {{ HTML::style('css/main.css')}}
-
   </head>
  
 <body>
 
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="nav navbar-header">		   
-		<a href="/" class="brand">
-		<img alt="" src="http://127.0.0.1/qanda/public/logo.png" />
-		</a>	   
+    		<a href="http://127.0.0.1/qanda/public/users/dashboard" class="brand">
+    		  <img alt="" src="http://127.0.0.1/qanda/public/logo.png" />
+    		</a>	   
         </div>
 
         <div class="container">
@@ -39,11 +37,11 @@
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Apps <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Qanda</a></li>
-                            <li><a href="#">Todoshedodowah</a></li>
-                            <li><a href="#">Fab</a></li>
+                            <li>{{ HTML::link('users/qanda', 'Qanda') }}</li>
+                            <li>{{ HTML::link('users/todo', 'ToDo') }}</li>
+                            <li>{{ HTML::link('users/restapi', 'RestAPI') }}</li>
                             <li class="divider"></li>
-                            <li><a href="#">Trash</a></li>
+                            <li>{{ HTML::link('#', 'Trash') }}</li>
                         </ul>
                     </li>
                 @endif 

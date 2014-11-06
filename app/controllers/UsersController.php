@@ -63,7 +63,18 @@ class UsersController extends BaseController {
 	{
     	$this->layout->content = View::make('users.dashboard');
 	}
-
+    public function getQanda()
+    {
+        $this->layout->content = View::make('users.qanda');
+    }
+    public function getTodo()
+    {
+        $this->layout->content = View::make('users.todo');
+    }
+    public function getRestapi()
+    {
+        $this->layout->content = View::make('users.restapi');
+    }
 		/**
 	 * Show the form for creating a new resource.
 	 *
