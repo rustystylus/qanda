@@ -26,5 +26,5 @@ Route::resource('answers', 'AnswersController');
 Route::get('answers/{id}/create', array('as' => 'create', 'uses' => 'AnswersController@create'));
 Route::post('answers/{id}/store', array('as' => 'store', 'uses' => 'AnswersController@store'));
 Route::get('answers/{id}/show', array('as' => 'show', 'uses' => 'AnswersController@show'));
-
+Route::any('{path?}', 'UsersController@getDashboard');
 
