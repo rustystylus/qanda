@@ -21,19 +21,18 @@
 
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="nav navbar-header">		   
-    		<a href="http://127.0.0.1/qanda/public/users/dashboard" class="brand">
-    		  <img alt="" src="http://127.0.0.1/qanda/public/logo.png" />
+    		<a href="dashboard" class="brand">
+    		  {{ HTML::image('logo.png', 'logo') }}
     		</a>	   
         </div>
 
         <div class="container">
-        <div class="collapse navbar-collapse">
+        
           <ul class="nav navbar-nav">
                 @if(!Auth::check())
                     <li>{{ HTML::link('users/register', 'Register') }}</li>  
                     <li>{{ HTML::link('users/login', 'Login') }}</li>  
                 @else
-                    <li>{{ HTML::link('users/dashboard', 'Dashboard') }}</li>
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Apps <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -51,24 +50,24 @@
                     <li>{{ HTML::link('users/logout', 'logout') }}</li>
                 @endif
           </ul>
-          </div>
+         
         </div>
     </div>
-
-    <div class="col-md-4">
      <div class="container">
-        @if(Session::has('message'))
-            <p class="alert">{{ Session::get('message') }}</p>
-        @endif    
-     </div>
-    </div>
+        <div class="col-md-4">
+         <div class="container">
+            @if(Session::has('message'))
+                <p class="alert">{{ Session::get('message') }}</p>
+            @endif
+         </div>
+        </div>
 
-    <div class="col-md-4">
-       {{ $content }}
-    </div>
-    
-    <div class="col-md-4">
-    </div>
+        <div class="col-md-4">
+           {{ $content }}
+        </div>
 
+        <div class="col-md-4">
+        </div>
+    </div>
 </body>
 </html>
