@@ -1,7 +1,7 @@
 <div class="container">
 
 <div class="row">
-		<ul class="nav nav-sidebar">
+		<ul class="list-inline">
 			<li>question Id: {{ $question->id }}</li>
 			<li>User Id: {{ $question->user_id }}</li>
 			<li>
@@ -22,9 +22,9 @@
 		</p>
 </div>
 
-<dl width="100%" class="display" id="answers">
+<dl width="100%"  class="list-inline" id="answers">
             <li>
-                <ul>
+                <ul class="list-inline">
             	<li>Id</li>
             	<li>question Id</li>
                 <li>Content</li>
@@ -35,7 +35,7 @@
 
 
 		@foreach ($question->answers as $info)
-		<ul>
+		<ul class="list-inline">
 					<li>
 			    		{{$info->id;}}
 					</li>
