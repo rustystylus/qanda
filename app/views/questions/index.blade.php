@@ -39,7 +39,7 @@
 					<td>
 						<a href="{{ URL::action('QuestionsController@show', [$info->id] ) }}">
 							<button type="button" class="btn btn-default">
-								View
+								View Answer
 							</button>
 						</a> 		
 					</td>

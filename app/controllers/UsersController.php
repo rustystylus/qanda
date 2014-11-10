@@ -75,6 +75,10 @@ class UsersController extends BaseController {
     {
         $this->layout->content = View::make('users.restapi');
     }
+    public function getCv()
+    {
+        $this->layout->content = View::make('users.cv');
+    }
 		/**
 	 * Show the form for creating a new resource.
 	 *

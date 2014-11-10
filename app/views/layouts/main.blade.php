@@ -40,7 +40,7 @@
                             <li>{{ HTML::link('users/todo', 'ToDo') }}</li>
                             <li>{{ HTML::link('users/restapi', 'RestAPI') }}</li>
                             <li class="divider"></li>
-                            <li>{{ HTML::link('#', 'Trash') }}</li>
+                            <li>{{ HTML::link('users/cv', 'CV') }}</li>
                         </ul>
                     </li>
                 @endif 
