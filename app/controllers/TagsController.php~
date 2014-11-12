@@ -44,7 +44,7 @@ class TagsController extends BaseController {
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
 			'text'       => 'required',
-            		'question_id'=>'required'
+            'question_id'=>'required'
 		);
 		$validator = Validator::make(Input::all(), $rules);
 

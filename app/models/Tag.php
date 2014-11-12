@@ -10,10 +10,10 @@ class Tag extends Eloquent {
 	protected $table = 'tags';
 
 	public $timestamps = false;
-    // Rag __has_many__ Question
-    public function question()
+
+    public function questions()
     {
-        return $this->belongsToMany('Question');
+        return $this->belongsToMany('Question','questions_tags','question_id','tag_id');
     }
 	public function getTagInfo($text)
 	{

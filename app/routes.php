@@ -18,6 +18,7 @@ Route::get('/', 'UsersController@getDashboard');
 Route::controller('users', 'UsersController');
 
 Route::resource('tags', 'TagsController');
+Route::get('tags/{id}/create', array('as' => 'create', 'uses' => 'TagsController@create'));
 
 Route::resource('questions', 'QuestionsController');
 Route::get('questions/quote/{id}', array('as' => 'quote', 'uses' => 'QuestionsController@quote'));

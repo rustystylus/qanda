@@ -1,7 +1,7 @@
 
 <h1>Tags</h1>
 
-		<a href="{{ URL::to('tags/create') }}">
+		<a href="{{ URL::to('tags/0/create') }}">
 			<button type="button" class="btn btn-default">
 				Add Tag
 			</button>

@@ -2,8 +2,7 @@
 <div class="container">
 
 <div class="jumbotron">
-	<h2>Original</h2>
-	<h3>{{$question->description}}</h3>
+	<p>Q</p>
 	<p>{{$question->content}}</p>
 </div>
 

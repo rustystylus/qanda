@@ -39,15 +39,15 @@
 					<td>
 						<a href="{{ URL::action('QuestionsController@show', [$info->id] ) }}">
 							<button type="button" class="btn btn-default">
-								View Answer
+								View Question
 							</button>
 						</a> 		
 					</td>
 					<td>
-			    		{{date("j-n-Y H:m", strtotime($info->updated_at));}}
+			    		{{date("j M-Y", strtotime($info->updated_at));}}
 					</td>
 					<td>
-			    		{{date("j-n-Y H:m", strtotime($info->created_at));}}
+			    		{{date("j M-Y", strtotime($info->created_at));}}
 					</td>
 				</tr>
 			@endforeach

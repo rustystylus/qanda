@@ -21,7 +21,7 @@
 
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="nav navbar-header">		   
-    		<a href="dashboard" class="brand">
+    		<a href="dashboard" class="navbar-brand">
     		  {{ HTML::image('logo.png', 'logo') }}
     		</a>	   
         </div>

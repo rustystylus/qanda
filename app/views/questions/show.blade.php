@@ -46,10 +46,10 @@
 			    		{{substr( $info->content, 0, 50)."...";}}
 					</li>
 					<li>
-			    		{{date("j-n-Y", strtotime($info->updated_at));}}
+			    		{{date("j M-Y", strtotime($info->updated_at));}}
 					</li>
 					<li>
-			    		{{date("j-n-Y", strtotime($info->created_at));}}
+			    		{{date("j M-Y", strtotime($info->created_at));}}
 					</li>
 					<li>
 						<a href="{{ URL::to('answers/'.$info->id.'/show') }}">
@@ -67,6 +67,21 @@
 	<a href="{{ URL::to('answers/'. $question->id.'/create' ) }}">
 		<button type="button" class="btn btn-default">
 				Add Answer
+		</button>
+	</a>
+</div>
+<div class="container">
+	<p/>tag cloud</p>
+		<ul class="list-inline">
+		@foreach ($question->tags as $t)		
+		<li>
+			 {{$t->text;}}
+		</li>
+		@endforeach
+		</ul>
+	<a href="{{ URL::to('tags/'. $question->id.'/create' ) }}">
+		<button type="button" class="btn btn-default">
+			Add Tag
 		</button>
 	</a>
 </div>

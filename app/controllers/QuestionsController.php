@@ -54,9 +54,9 @@ class QuestionsController extends BaseController {
 		} else {
 			// store
 			$question = new Question;
-			$question->user_id       = Input::get('user_id');
-			$question->description       = Input::get('description');
-			$question->content      = Input::get('content');
+			$question->user_id = Input::get('user_id');
+			$question->description = Input::get('description');
+			$question->content = Input::get('content');
 			$question->save();
 
 			// redirect

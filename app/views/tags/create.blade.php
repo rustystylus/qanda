@@ -4,6 +4,7 @@
 {{ HTML::ul($errors->all()) }}
 
 {{ Form::open(array('url' => 'tags')) }}
+	    {{ Form::hidden('question_id', $question_id, array('class' => 'form-control')) }}
 
 	<div class="form-group">
 		{{ Form::label('tag', 'Tag') }}
@@ -13,3 +14,4 @@
 	{{ Form::submit('Create Tag', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
+
