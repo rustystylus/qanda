@@ -75,10 +75,11 @@ class QuestionsController extends BaseController {
 	{
 		// get the question
 		$question = Question::find($id);
+        $tags = $question->tags()->get();
 
 		// show the view and pass the question to it
 		$this->layout->content = View::make('questions.show')
-			->with('question', $question);
+			->with(array('question'=> $question, 'tags'=>$tags));
 
 	}
 

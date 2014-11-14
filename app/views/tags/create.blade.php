@@ -15,3 +15,35 @@
 
 {{ Form::close() }}
 
+<table width="100%" class="display" id="tags" cellspacing="0">
+        <thead>
+            <tr>
+            	<th>ID</th>
+                <th>Name</th>
+
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+            	<th>ID</th>
+                <th>Name</th>
+
+            </tr>
+        </tfoot>
+
+        <tbody>
+			@foreach ($tags as $info)
+				<tr>
+					<td>
+			    		{{$info->id}}
+					</td>
+					<td>
+			    		{{$info->text}}
+					</td>
+
+				</tr>
+			@endforeach
+		</tbody>
+</table>
+

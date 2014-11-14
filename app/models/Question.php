@@ -6,7 +6,7 @@ class Question extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'questions';
+    public $table = 'questions';
 
     public $timestamps = true;
 
@@ -24,7 +24,7 @@ class Question extends Eloquent {
     // Question __has_many__ Tags
     public function tags()
     {
-        return $this->belongsToMany('Tag','questions_tags','question_id','tag_id');
+        return $this->belongsToMany('Tag');
     }
 
 }

@@ -2,16 +2,16 @@
 
 <div class="row">
 		<ul class="list-inline">
-			<li>question Id: {{ $question->id }}</li>
+			<li>Question Id: {{ $question->id }}</li>
 			<li>User Id: {{ $question->user_id }}</li>
 			<li>
 				Description: {{ $question->description }}
 			</li>
 			<li>
-				Created: {{ $question->created_at }}
+				Created: {{date("j M-Y", strtotime( $question->created_at)) }}
 			</li>
 			<li>
-				Updated: {{ $question->updated_at }}
+				Updated: {{date("j M-Y", strtotime( $question->updated_at)) }}
 			</li>
 		</ul>
 </div>
@@ -22,47 +22,51 @@
 		</p>
 </div>
 
-<dl width="100%"  class="list-inline" id="answers">
-            <li>
-                <ul class="list-inline">
-            	<li>Id</li>
-            	<li>question Id</li>
-                <li>Content</li>
-                <li>Updated</li>
-                <li>Created</li>
-                </ul>
-            </li>
+<div class="container rowspacer">
 
+<table width="100%" class="display" id="questions" cellspacing="0">
+            <thead>
+                <tr>
+            	<th>Id</th>
+            	<th>question Id</th>
+                <th>Content</th>
+                <th>Updated</th>
+                <th>Created</th>
+                </tr>
+            </thead>
 
 		@foreach ($question->answers as $info)
-		<ul class="list-inline">
-					<li>
+		<tbody>
+		    <tr>
+					<td>
 			    		{{$info->id;}}
-					</li>
-					<li>
+					</td>
+					<td>
 			    		{{$info->question_id;}}
-					</li>					
-					<li>
+					</td>					
+					<td>
 			    		{{substr( $info->content, 0, 50)."...";}}
-					</li>
-					<li>
+					</td>
+					<td>
 			    		{{date("j M-Y", strtotime($info->updated_at));}}
-					</li>
-					<li>
+					</td>
+					<td>
 			    		{{date("j M-Y", strtotime($info->created_at));}}
-					</li>
-					<li>
+					</td>
+					<td>
 						<a href="{{ URL::to('answers/'.$info->id.'/show') }}">
 						<button type="button" class="btn btn-default">
 							View
 						</button>
 						</a>
-					</li>
-		</ul>
+					</td>
+					</tr>
+		</tbody>
 			@endforeach
+			<tfoot></tfoot>
+</table>
 
-		
-</dl>
+</div>
 <div class="container">
 	<a href="{{ URL::to('answers/'. $question->id.'/create' ) }}">
 		<button type="button" class="btn btn-default">
@@ -73,11 +77,11 @@
 <div class="container">
 	<p/>tag cloud</p>
 		<ul class="list-inline">
-		@foreach ($question->tags as $t)		
-		<li>
-			 {{$t->text;}}
-		</li>
-		@endforeach
+            @foreach ($tags as $t)
+            <li>
+                 {{$t->text;}}
+            </li>
+            @endforeach
 		</ul>
 	<a href="{{ URL::to('tags/'. $question->id.'/create' ) }}">
 		<button type="button" class="btn btn-default">
@@ -85,9 +89,4 @@
 		</button>
 	</a>
 </div>
-<script>
-    $(question).ready(function() {
-        
-    } );
 
-</script>

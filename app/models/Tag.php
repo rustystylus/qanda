@@ -7,17 +7,12 @@ class Tag extends Eloquent {
 	 *
 	 * @var string
 	 */
-	protected $table = 'tags';
+	public $table = 'tags';
 
-	public $timestamps = false;
+	public $timestamps = true;
 
     public function questions()
     {
-        return $this->belongsToMany('Question','questions_tags','question_id','tag_id');
+        return $this->belongsToMany('Question');
     }
-	public function getTagInfo($text)
-	{
-        return DB::query('SELECT * FROM tag WHERE text=?',array($text));
-    }
-
 }

@@ -28,8 +28,10 @@ class TagsController extends BaseController {
         }
         // get the question
 		$question = Question::find($id);
+        $tags = Question::find($id)->tags;
 		$this->layout->content = View::make('tags.create')
-					->with('question_id', $question->id);
+					->with('question_id', $question->id)
+                    ->with('tags', $tags);
         //$this->layout->content = View::make('tags.create');
 	}
 
@@ -59,7 +61,7 @@ class TagsController extends BaseController {
 			$tag->text = Input::get('text');
 			$tag->save();
 
-                $tag->questions()->attach(Input::get('question_id')); //this executes the insert-query
+            $tag->questions()->attach(Input::get('question_id')); //this executes the insert-query
 				/*$question_tag = new QuestionTag;
 				$question_tag->question_id = $id;
 				$question_tag->tag_id = $tag->id;

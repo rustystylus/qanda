@@ -12,7 +12,7 @@ class CreateQuestionsTagsTable extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('questions_tags', function($table) {
+        Schema::create('question_tag', function($table) {
             $table->increments('id');
             $table->integer('question_id');
             $table->integer('tag_id');
@@ -27,7 +27,7 @@ class CreateQuestionsTagsTable extends Migration {
 	 */
 	public function down()
 	{
-        Schema::drop('questions_tags');
+        Schema::drop('question_tag');
 	}
 
 }
