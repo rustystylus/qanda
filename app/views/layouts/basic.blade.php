@@ -35,7 +35,7 @@
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Apps <b class="caret"></b></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li>{{ HTML::link('users/qanda', 'Qanda') }}</li>
+                            <li>{{ HTML::link('questions', 'Qanda') }}</li>
                             <li>{{ HTML::link('users/todo', 'ToDo') }}</li>
                             <li>{{ HTML::link('users/restapi', 'RestAPI') }}</li>
                             <li class="divider"></li>
