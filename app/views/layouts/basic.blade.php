@@ -25,7 +25,7 @@
                 </a>
             </div>
 
-          <div class="container">
+
          
           <ul class="nav navbar-nav">
                 @if(!Auth::check())
@@ -50,7 +50,7 @@
             @endif
           </ul>
          
-        </div>
+
     </div>
 
     <div class="container">

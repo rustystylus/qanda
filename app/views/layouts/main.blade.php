@@ -26,7 +26,7 @@
     		</a>	   
         </div>
 
-        <div class="container">
+
         
           <ul class="nav navbar-nav">
                 @if(!Auth::check())
@@ -51,15 +51,15 @@
                 @endif
           </ul>
          
-        </div>
+
     </div>
      <div class="container">
         <div class="col-md-4">
-         <div class="container">
+
             @if(Session::has('message'))
                 <p class="alert">{{ Session::get('message') }}</p>
             @endif
-         </div>
+
         </div>
 
         <div class="col-md-4">

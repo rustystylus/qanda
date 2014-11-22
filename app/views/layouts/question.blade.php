@@ -25,8 +25,7 @@
                 </a>
             </div>
 
-          <div class="container">
-         
+
           <ul class="nav navbar-nav">
                 @if(!Auth::check())
                     <li>{{ HTML::link('users/register', 'Register') }}</li>  
@@ -55,7 +54,7 @@
             @endif
           </ul>
          
-        </div>
+
     </div>
 
     <div class="container">

@@ -1,13 +1,13 @@
 
 <h1>Questions</h1>
-<div class="container">
+
 	<a href="{{ URL::to('questions/create') }}">
 		<button type="button" class="btn btn-default">
 			Add Question
 		</button>
 	</a>	
-</div>
-<div class="container rowspacer">
+
+<div class="rowspacer">
 <table width="100%" class="display" id="questions" cellspacing="0">
         <thead>
             <tr>            	
