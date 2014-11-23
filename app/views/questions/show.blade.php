@@ -1,4 +1,4 @@
-<div class="container">
+
 
 <div class="row">
 		<ul class="list-inline">
@@ -22,14 +22,14 @@
 		</p>
 </div>
 
-<div class="container rowspacer">
-
+<div class="rowspacer">
+<h2>Answers</h2>
 <table width="100%" class="display" id="questions" cellspacing="0">
             <thead>
                 <tr>
             	<th>Id</th>
             	<th>question Id</th>
-                <th>Content</th>
+                <th>Answer</th>
                 <th>Updated</th>
                 <th>Created</th>
                 </tr>
@@ -56,7 +56,7 @@
 					<td>
 						<a href="{{ URL::to('answers/'.$info->id.'/show') }}">
 						<button type="button" class="btn btn-default">
-							View
+							View Answer
 						</button>
 						</a>
 					</td>
@@ -66,15 +66,13 @@
 			<tfoot></tfoot>
 </table>
 
-</div>
-<div class="container">
+
 	<a href="{{ URL::to('answers/'. $question->id.'/create' ) }}">
 		<button type="button" class="btn btn-default">
 				Add Answer
 		</button>
 	</a>
-</div>
-<div class="container">
+
 	<p/>tag cloud</p>
 		<ul class="list-inline">
             @foreach ($tags as $t)
@@ -88,5 +86,5 @@
 			Add Tag
 		</button>
 	</a>
-</div>
+
 
