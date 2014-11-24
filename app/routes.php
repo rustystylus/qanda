@@ -30,11 +30,14 @@ Route::resource('tags', 'TagsController');
 Route::get('tags/{id}/create', array('as' => 'create', 'uses' => 'TagsController@create'));
 
 Route::resource('questions', 'QuestionsController');
-Route::get('questions/quote/{id}', array('as' => 'quote', 'uses' => 'QuestionsController@quote'));
+//Route::get('questions/quote/{id}', array('as' => 'quote', 'uses' => 'QuestionsController@quote'));
 
 Route::resource('answers', 'AnswersController');
 Route::get('answers/{id}/create', array('as' => 'create', 'uses' => 'AnswersController@create'));
 Route::post('answers/{id}/store', array('as' => 'store', 'uses' => 'AnswersController@store'));
 Route::get('answers/{id}/show', array('as' => 'show', 'uses' => 'AnswersController@show'));
+
+Route::resource('todos', 'TodosController');
+
 Route::any('{path?}', 'UsersController@getDashboard');
 

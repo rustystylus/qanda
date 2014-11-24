@@ -25,7 +25,6 @@
                 </a>
             </div>
 
-
           <ul class="nav navbar-nav">
                 @if(!Auth::check())
                     <li>{{ HTML::link('users/register', 'Register') }}</li>  
@@ -35,10 +34,10 @@
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Apps <b class="caret"></b></a>
                         <ul class="dropdown-menu" role="menu">
                             <li>{{ HTML::link('questions', 'Qanda') }}</li>
-                            <li>{{ HTML::link('users/todo', 'ToDo') }}</li>
+                            <li>{{ HTML::link('todos', 'Todo') }}</li>
                             <li>{{ HTML::link('users/restapi', 'RestAPI') }}</li>
                             <li class="divider"></li>
-                            <li>{{ HTML::link('users/cv', 'CV') }}</li>
+                            <li>{{ HTML::link('users/cv', 'Blank') }}</li>
                         </ul>
                     </li>
                 @endif 
@@ -53,8 +52,6 @@
                 <li>{{ HTML::link('users/logout', 'logout') }}</li>
             @endif
           </ul>
-         
-
     </div>
 
     <div class="container">
