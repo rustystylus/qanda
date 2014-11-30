@@ -1,7 +1,7 @@
 <?php
  
 class UsersController extends BaseController {
-    protected $layout = "layouts.main";
+    protected $layout = "layouts.basic";
 
 	public function __construct() 
 	{

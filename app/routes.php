@@ -9,12 +9,34 @@
 | It's a breeze. Simply tell Laravel the URIs it should respond to
 | and give it the Closure to execute when that URI is requested.
 |
-Route::get('/', function()
-{
-	return View::make('hello');
-});
 */
-Route::get('/', 'UsersController@getDashboard');
+Route::get('form', function(){
+    return View::make('form');
+});
+
+Route::any('form-submit', function(){
+    $exfile=Input::file('file');
+
+    $result=Excel::selectSheetsByIndex(0)->load($exfile)->get();
+
+    DB::table('rmexcel')->delete();
+
+    foreach ($result as $row)
+    {
+        $excel = new Rmexcel;
+        $excel->category=$row['category'];
+        $excel->sub_category=$row['sub_category'];
+        $excel->part_number=$row['part_number'];
+        $excel->description=$row['description'];
+        $excel->save();
+        //print_r($excel);
+        //echo $excel->category." ".$excel->category." ".$excel->part_number." ".$excel->description;
+
+    }
+    return Redirect::to('Rmexcel/index');
+});
+
+
 Route::controller('users', 'UsersController');
 // Route group for API versioning
 Route::group(array('prefix' => 'api/v1', /*'before' => 'auth.basic'*/), function()
@@ -38,6 +60,8 @@ Route::post('answers/{id}/store', array('as' => 'store', 'uses' => 'AnswersContr
 Route::get('answers/{id}/show', array('as' => 'show', 'uses' => 'AnswersController@show'));
 
 Route::resource('todos', 'TodosController');
+Route::resource('Rmexcel', 'RmexcelsController');
 
+Route::get('/', 'UsersController@getDashboard');
 Route::any('{path?}', 'UsersController@getDashboard');
 

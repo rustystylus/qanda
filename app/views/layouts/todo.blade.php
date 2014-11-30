@@ -9,10 +9,13 @@
     {{ HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css') }}
     <!-- Optional theme -->
     {{ HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css')}}
+    {{ HTML::style('//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css')}}
     {{ HTML::script('js/jquery.js')}}
     {{ HTML::script('js/jquery.dataTables.min.js')}}
     <!-- Latest compiled and minified JavaScript -->
     {{ HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js')}}
+   {{ HTML::script('//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js')}}
+
 
     {{ HTML::style('css/main.css')}}
 </head>
@@ -38,7 +41,8 @@
                             <li>{{ HTML::link('todos', 'Todo') }}</li>
                             <li>{{ HTML::link('users/restapi', 'RestAPI') }}</li>
                             <li class="divider"></li>
-                            <li>{{ HTML::link('users/cv', 'Blank') }}</li>
+                            <li>{{ HTML::link('form', 'Upload Spreadsheet') }}</li>
+                            <li>{{ HTML::link('Rmexcel', 'Show Spreadsheet Table') }}</li>
                         </ul>
                     </li>
                 @endif

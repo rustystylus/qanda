@@ -21,15 +21,14 @@
         </thead>
         <tfoot>
             <tr>            	
-                <th>Id</th>
-                <th>Position</th>
-                <th>Description</th>
-                <th>Todo</th>
-                <th>Updated</th>
-                <th>Created</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
         </tfoot>
- 
         <tbody>
 			@foreach ($todoInfo as $info)
 				<tr data-id={{$info->id}}>	
@@ -43,11 +42,9 @@
 		    			{{$info->description}}
 					</td>
 					<td>
-						<a href="{{ URL::action('TodosController@show', [$info->id] ) }}">
-							<button type="button" class="btn btn-default">
-								View Todo
-							</button>
-						</a> 		
+    					<a href="{{ URL::action('TodosController@show', [$info->id] ) }}">
+								View
+    					</a>
 					</td>
 					<td>
 			    		{{date("j M-Y", strtotime($info->updated_at));}}

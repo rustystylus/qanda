@@ -60,7 +60,7 @@
 						</button>
 						</a>
 					</td>
-					</tr>
+			</tr>
 		</tbody>
 			@endforeach
 			<tfoot></tfoot>

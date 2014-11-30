@@ -15,9 +15,10 @@ body {
 	width:100%;
     margin: 5px 0 5px 0 ;
 }
-.rowspacer {
+.rowspacer{
     margin-top: 20px; /* define margin as you see fit */
 }
+/*
 @font-face {
 	    font-family: Economica;
 	    src: url(fonts/Economica/Economica-Regular.ttf);
@@ -28,3 +29,4 @@ body {
 	    color: 	#780000 ;
 	   /* padding: 5px;*/
 	}
+*/
