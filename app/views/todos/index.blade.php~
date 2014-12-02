@@ -1,43 +1,45 @@
 
-<h1>Questions</h1>
+<h1>Todos</h1>
 
-	<a href="{{ URL::to('questions/create') }}">
+	<a href="{{ URL::to('todos/create') }}">
 		<button type="button" class="btn btn-default">
-			Add Question
+			Add Todo
 		</button>
 	</a>	
 
 <div class="rowspacer">
-<table width="100%" class="display" id="questions" cellspacing="0">
+<table width="100%" class="display" id="todos" cellspacing="0">
         <thead>
             <tr>            	
-                <th>Question</th>
-                <th>Question</th> 
+                <th>Position</th>
+		<th>Todo</th>
+                <th>Todo</th>
                 <th>Updated</th>
                 <th>Created</th>   
             </tr>
         </thead>
         <tfoot>
             <tr>            	
-                <th>Question</th>
-                <th>Question</th>
-                <th>Updated</th>
-                <th>Created</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
         </tfoot>
- 
         <tbody>
-			@foreach ($questionInfo as $info)
-				<tr data-id={{$info->id}}>					
+			@foreach ($todoInfo as $info)
+				<tr data-id={{$info->id}}>	
+                    <td>
+                        {{$info->position}}
+                    </td>
 					<td>
 		    			{{$info->content}}
 					</td>
 					<td>
-						<a href="{{ URL::action('QuestionsController@show', [$info->id] ) }}">
-							<button type="button" class="btn btn-default">
-								View Question
-							</button>
-						</a> 		
+    					<a href="{{ URL::action('TodosController@show', [$info->id] ) }}">
+								View
+    					</a>
 					</td>
 					<td>
 			    		{{date("j M-Y", strtotime($info->updated_at));}}
@@ -52,6 +54,6 @@
 </div>
 <script>
     $(document).ready(function() {
-        $('#questions').dataTable();
+        $('#todos').dataTable();
     } );
 </script>

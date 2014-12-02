@@ -2,11 +2,7 @@
 
 <div class="row">
 		<ul class="list-inline">
-			<li>Question Id: {{ $question->id }}</li>
 			<li>User Id: {{ $question->user_id }}</li>
-			<li>
-				Description: {{ $question->description }}
-			</li>
 			<li>
 				Created: {{date("j M-Y", strtotime( $question->created_at)) }}
 			</li>
@@ -27,23 +23,16 @@
 <table width="100%" class="display" id="questions" cellspacing="0">
             <thead>
                 <tr>
-            	<th>Id</th>
-            	<th>question Id</th>
                 <th>Answer</th>
                 <th>Updated</th>
-                <th>Created</th>
+		<th>Votes</th>
                 </tr>
             </thead>
 
 		@foreach ($question->answers as $info)
 		<tbody>
 		    <tr>
-					<td>
-			    		{{$info->id;}}
-					</td>
-					<td>
-			    		{{$info->question_id;}}
-					</td>					
+				
 					<td>
 			    		{{substr( $info->content, 0, 50)."...";}}
 					</td>
@@ -51,7 +40,7 @@
 			    		{{date("j M-Y", strtotime($info->updated_at));}}
 					</td>
 					<td>
-			    		{{date("j M-Y", strtotime($info->created_at));}}
+			    		v
 					</td>
 					<td>
 						<a href="{{ URL::to('answers/'.$info->id.'/show') }}">

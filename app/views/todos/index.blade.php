@@ -11,9 +11,8 @@
 <table width="100%" class="display" id="todos" cellspacing="0">
         <thead>
             <tr>            	
-                <th>Id</th>
                 <th>Position</th>
-                <th>Description</th>
+		<th>Todo</th>
                 <th>Todo</th>
                 <th>Updated</th>
                 <th>Created</th>   
@@ -26,20 +25,16 @@
                 <th></th>
                 <th></th>
                 <th></th>
-                <th></th>
             </tr>
         </tfoot>
         <tbody>
 			@foreach ($todoInfo as $info)
 				<tr data-id={{$info->id}}>	
+				    <td>
+				        {{$info->position}}
+				    </td>
 					<td>
-						{{$info->id}}
-					</td>
-                    <td>
-                        {{$info->position}}
-                    </td>
-					<td>
-		    			{{$info->description}}
+		    			{{$info->content}}
 					</td>
 					<td>
     					<a href="{{ URL::action('TodosController@show', [$info->id] ) }}">

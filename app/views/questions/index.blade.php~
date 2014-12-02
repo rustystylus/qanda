@@ -7,6 +7,7 @@
 		</button>
 	</a>	
 
+<div class="rowspacer">
 <table width="100%" class="display" id="questions" cellspacing="0">
         <thead>
             <tr>            	
@@ -34,27 +35,28 @@
 						{{$info->id}}
 					</td>				
 					<td>
-		    			{{$info->description}}
+		    			{{$info->content}}
 					</td>
 					<td>
 						<a href="{{ URL::action('QuestionsController@show', [$info->id] ) }}">
 							<button type="button" class="btn btn-default">
-								View
+								View Question
 							</button>
 						</a> 		
 					</td>
 					<td>
-			    		{{date("j-n-Y H:m", strtotime($info->updated_at));}}
+			    		{{date("j M-Y", strtotime($info->updated_at));}}
 					</td>
 					<td>
-			    		{{date("j-n-Y H:m", strtotime($info->created_at));}}
+			    		{{date("j M-Y", strtotime($info->created_at));}}
 					</td>
 				</tr>
 			@endforeach
 		</tbody>
 </table>
+</div>
 <script>
-    $(question).ready(function() {
+    $(document).ready(function() {
         $('#questions').dataTable();
     } );
 </script>
