@@ -18,24 +18,22 @@ Route::any('form-submit', function(){
     $exfile=Input::file('file');
 
     $result=Excel::selectSheetsByIndex(0)->load($exfile)->get();
-
-    DB::table('rmexcel')->delete();
-
-    foreach ($result as $row)
+    if (isset($result))
     {
-        $excel = new Rmexcel;
-        $excel->category=$row['category'];
-        $excel->sub_category=$row['sub_category'];
-        $excel->part_number=$row['part_number'];
-        $excel->description=$row['description'];
-        $excel->save();
-        //print_r($excel);
-        //echo $excel->category." ".$excel->category." ".$excel->part_number." ".$excel->description;
+        DB::table('rmexcel')->delete();
 
+        foreach ($result as $row)
+        {
+            $excel = new Rmexcel;
+            $excel->category = $row['category'];
+            $excel->sub_category = $row['sub_category'];
+            $excel->part_number = $row['part_number'];
+            $excel->description = $row['description'];
+            $excel->save();
+        }
     }
     return Redirect::to('Rmexcel/index');
 });
-
 
 Route::controller('users', 'UsersController');
 // Route group for API versioning

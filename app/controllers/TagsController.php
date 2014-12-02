@@ -1,6 +1,6 @@
 <?php
 class TagsController extends BaseController {
-    protected $layout = "layouts.question";
+    protected $layout = "layouts.basic";
 
 	public $restful=true;
 

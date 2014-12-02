@@ -9,25 +9,32 @@
     {{ HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css') }}
     <!-- Optional theme -->
     {{ HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css')}}
-        {{ HTML::style('//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css')}}
-    {{ HTML::script('js/jquery.js')}}
-    {{ HTML::script('js/jquery.dataTables.min.js')}}
-    <!-- Latest compiled and minified JavaScript -->
-    {{ HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js')}}
-    {{ HTML::script('//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js')}}
-
-
+    {{ HTML::style('css/jquery.dataTables.css') }}
+    {{ HTML::style('css/jquery.dataTables.min.css') }}
+    {{ HTML::style('css/jquery.dataTables_themeroller.css') }}
     {{ HTML::style('css/main.css')}}
+
+        {{ HTML::script('js/jquery.js')}}
+        {{ HTML::script('js/jquery.dataTables.min.js')}}
+        <!-- Latest compiled and minified JavaScript -->
+        {{ HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js')}}
 </head>
  
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
             <div class="nav navbar-header">
-                <a href="dashboard" class="navbar-brand">
-                  {{ HTML::image('logo.png', 'logo') }}
-                </a>
+                  <a href="dashboard" class="navbar-brand">
+                      {{ HTML::image('logo.png', 'logo') }}
+                  </a>
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
             </div>
-
+            <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
                 @if(!Auth::check())
                     <li>{{ HTML::link('users/register', 'Register') }}</li>  
@@ -51,7 +58,8 @@
                 <li>{{ HTML::link('users/logout', 'logout') }}</li>
             @endif
           </ul>
-         
+          </div>
+    </div>
 
     </div>
 
@@ -61,5 +69,7 @@
     </div>
     </div>
 
+
 </body>
+
 </html>

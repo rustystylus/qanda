@@ -1,7 +1,7 @@
 <?php
 class AnswersController extends BaseController {
 
-    protected $layout = "layouts.question";
+    protected $layout = "layouts.basic";
 
 	public $restful=true;
 

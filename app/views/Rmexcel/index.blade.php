@@ -4,7 +4,6 @@
 <table width="100%" class="display" id="rmexcel" cellspacing="0">
         <thead>
             <tr>            	
-                <th>Id</th>
                 <th>Category</th>
                 <th>Sub Category</th>
                 <th>Part Number</th>
@@ -13,7 +12,6 @@
         </thead>
         <tfoot>
             <tr>            	
-                <th>Id</th>
                 <th>Category</th>
                 <th>Sub Category</th>
                 <th>Part Number</th>
@@ -23,9 +21,6 @@
         <tbody>
 			@foreach ($RmexcelList as $info)
 				<tr data-id={{$info->id}}>	
-					<td>
-						{{$info->id}}
-					</td>
                     <td>
                         {{$info->category}}
                     </td>                    <td>

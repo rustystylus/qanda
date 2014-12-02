@@ -1,6 +1,6 @@
 <?php
 class TodosController extends BaseController {
-    protected $layout = "layouts.todo";
+    protected $layout = "layouts.basic";
 
     public $restful=true;
 
