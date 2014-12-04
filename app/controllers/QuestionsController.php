@@ -16,7 +16,8 @@ class QuestionsController extends BaseController {
             return Redirect::to('users/login');
         }
         $questionInfo = User::find(Auth::user()->id)->questions;
-  	  	$this->layout->content = View::make('questions.index')->with('questionInfo', $questionInfo);
+  	  	$this->layout->content = View::make('questions.index')
+  	  							->with('questionInfo', $questionInfo);
 	}
 
 	/**

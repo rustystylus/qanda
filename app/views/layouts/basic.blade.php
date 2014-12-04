@@ -13,11 +13,10 @@
     {{ HTML::style('css/jquery.dataTables.min.css') }}
     {{ HTML::style('css/jquery.dataTables_themeroller.css') }}
     {{ HTML::style('css/main.css')}}
-
-        {{ HTML::script('js/jquery.js')}}
-        {{ HTML::script('js/jquery.dataTables.min.js')}}
-        <!-- Latest compiled and minified JavaScript -->
-        {{ HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js')}}
+    <!-- Latest compiled and minified JavaScript -->
+    {{ HTML::script('js/jquery.js')}}
+    {{ HTML::script('js/jquery.dataTables.min.js')}}
+    {{ HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js')}}
 </head>
  
 <body>
@@ -47,15 +46,19 @@
                             <li>{{ HTML::link('todos', 'Todo') }}</li>
                             <li>{{ HTML::link('users/restapi', 'RestAPI') }}</li>
                             <li class="divider"></li>
+                            @if (Auth::user()->id == 5)
                             <li>{{ HTML::link('form', 'Upload Spreadsheet') }}</li>
+                            @endif
                             <li>{{ HTML::link('Rmexcel', 'Show Spreadsheet Table') }}</li>
                         </ul>
+                    </li>
+                    <li>
                     </li>
                 @endif 
           </ul> 
           <ul class="nav navbar-nav navbar-right">
             @if(Auth::check())
-                <li>{{ HTML::link('users/logout', 'logout') }}</li>
+                <li>{{ HTML::link('users/logout', Auth::user()->email.' logout') }}</li>
             @endif
           </ul>
           </div>

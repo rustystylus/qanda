@@ -33,7 +33,7 @@ class RmexcelsController extends BaseController {
     }*/
     public function destroy()
     {
-        $i=1;
+
         Rmexcel::truncate();
        // $deleteList->delete();
 
