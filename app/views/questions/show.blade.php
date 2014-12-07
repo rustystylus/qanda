@@ -1,4 +1,6 @@
-
+<div class="row">
+			{{ HTML::link('questions', 'Question List') }}
+</div>
 
 <div class="row">
 		<ul class="list-inline">
@@ -11,11 +13,13 @@
 			</li>
 		</ul>
 </div>
-</div>
-<div class="jumbotron">
-		<p>
-			 {{ $question->content }}
-		</p>
+
+<div class="row">
+    <div class="jumbotron">
+            <p>
+                 {{ $question->content }}
+            </p>
+    </div>
 </div>
 
 <div class="rowspacer">
@@ -25,7 +29,7 @@
                 <tr>
                 <th>Answer</th>
                 <th>Updated</th>
-		<th>Votes</th>
+		        <th>Votes</th>
                 </tr>
             </thead>
 
@@ -40,7 +44,7 @@
 			    		{{date("j M-Y", strtotime($info->updated_at));}}
 					</td>
 					<td>
-			    		v
+			    		up|down
 					</td>
 					<td>
 						<a href="{{ URL::to('answers/'.$info->id.'/show') }}">

@@ -67,9 +67,13 @@
     </div>
 
     <div class="container">
-    <div class="col-md-12">
-       {{ $content }}
-    </div>
+            @if(Session::has('message'))
+                <p class="alert">{{ Session::get('message') }}</p>
+            @endif
+            
+            <div class="col-md-12">
+               {{ $content }}
+            </div>
     </div>
 
 

@@ -21,6 +21,18 @@
         <p></p>
       </div>
     </div>
+    <div class="item">
+      {{ HTML::image('images/img4.jpg', 'balloon') }}
+      <div class="carousel-caption">
+        <p></p>
+      </div>
+    </div>
+    <div class="item">
+      {{ HTML::image('images/img5.jpg', 'balloon') }}
+      <div class="carousel-caption">
+        <p></p>
+      </div>
+    </div>
   </div><!-- /.carousel-inner -->
   <!--  Next and Previous controls below
         href values must reference the id for this carousel -->
@@ -28,7 +40,7 @@
     <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
     <script>
       $(document).ready(function(){
-        $('.carousel').carousel();
+        $('.carousel').carousel({interval: 6000});
       });
     </script>
 </div><!-- /.carousel -->

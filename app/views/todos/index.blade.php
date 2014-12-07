@@ -11,8 +11,10 @@
 <table width="100%" class="display" id="todos" cellspacing="0">
         <thead>
             <tr>            	
-                <th>Position</th>
-		<th>Todo</th>
+                <th>Priority</th>
+                <th>Up</th>
+                <th>Down</th>
+		        <th>Todo</th>
                 <th>Todo</th>
                 <th>Updated</th>
                 <th>Created</th>   
@@ -20,6 +22,8 @@
         </thead>
         <tfoot>
             <tr>            	
+                <th></th>
+                <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -33,6 +37,8 @@
 				    <td>
 				        {{$info->position}}
 				    </td>
+				    <td><a href="#"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a></td>
+				    <td><a href="#"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></td>
 					<td>
 		    			{{$info->content}}
 					</td>

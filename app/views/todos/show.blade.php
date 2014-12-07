@@ -1,4 +1,6 @@
-
+<div class="row">
+			{{ HTML::link('todos', 'Todo List') }}
+</div>
 
 <div class="row">
 		<ul class="list-inline">
@@ -16,11 +18,12 @@
 			</li>
 		</ul>
 </div>
-</div>
-<div class="jumbotron">
-		<p>
-			 {{ $todo->content }}
-		</p>
+<div class="row">
+    <div class="jumbotron">
+            <p>
+                 {{ $todo->content }}
+            </p>
+    </div>
 </div>
 
 
