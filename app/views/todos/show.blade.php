@@ -6,7 +6,7 @@
 		<ul class="list-inline">
 			<li>Todo Id: {{ $todo->id }}</li>
 			<li>User Id: {{ $todo->user_id }}</li>
-			<li>Todo Position: {{ $todo->position }}</li>
+			<li>Priority: {{ $todo->position }}</li>
 			<li>
 				Description: {{ $todo->description }}
 			</li>

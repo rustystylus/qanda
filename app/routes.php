@@ -58,6 +58,9 @@ Route::post('answers/{id}/store', array('as' => 'store', 'uses' => 'AnswersContr
 Route::get('answers/{id}/show', array('as' => 'show', 'uses' => 'AnswersController@show'));
 
 Route::resource('todos', 'TodosController');
+Route::get('todos/{id}/priorityUp', array('as' => 'priorityUp', 'uses' => 'TodosController@priorityUp'));
+Route::get('todos/{id}/priorityDown', array('as' => 'priorityDown', 'uses' => 'TodosController@priorityDown'));
+
 Route::resource('Rmexcel', 'RmexcelsController');
 
 Route::get('/', 'UsersController@getDashboard');

@@ -17,11 +17,13 @@
 		        <th>Todo</th>
                 <th>Todo</th>
                 <th>Updated</th>
-                <th>Created</th>   
+                <th>Reminder</th>
+                <th>Done</th>   
             </tr>
         </thead>
         <tfoot>
             <tr>            	
+                <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -37,8 +39,8 @@
 				    <td>
 				        {{$info->position}}
 				    </td>
-				    <td><a href="#"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a></td>
-				    <td><a href="#"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></td>
+				    <td><a href="{{ URL::action('TodosController@priorityUp', [$info->id] ) }}"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a></td>
+				    <td><a href="{{ URL::action('TodosController@priorityDown', [$info->id] ) }}"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></td>
 					<td>
 		    			{{$info->content}}
 					</td>
@@ -51,7 +53,14 @@
 			    		{{date("j M-Y", strtotime($info->updated_at));}}
 					</td>
 					<td>
-			    		{{date("j M-Y", strtotime($info->created_at));}}
+			    		<a href="#">
+							Set	Reminder
+    					</a>
+					</td>
+					<td>
+			    		<a href="#">
+							Mark as done
+    					</a>
 					</td>
 				</tr>
 			@endforeach
@@ -60,6 +69,8 @@
 </div>
 <script>
     $(document).ready(function() {
-        $('#todos').dataTable();
+        $('#todos').dataTable({
+        	"order": [[ 0, "desc" ]]
+        });
     } );
 </script>

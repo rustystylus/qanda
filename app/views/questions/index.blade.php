@@ -14,7 +14,6 @@
                 <th>Question</th>
                 <th>Question</th> 
                 <th>Updated</th>
-                <th>Created</th>   
             </tr>
         </thead>
         <tfoot>
@@ -22,7 +21,6 @@
                 <th>Question</th>
                 <th>Question</th>
                 <th>Updated</th>
-                <th>Created</th>
             </tr>
         </tfoot>
  
@@ -41,9 +39,6 @@
 					</td>
 					<td>
 			    		{{date("j M-Y", strtotime($info->updated_at));}}
-					</td>
-					<td>
-			    		{{date("j M-Y", strtotime($info->created_at));}}
 					</td>
 				</tr>
 			@endforeach

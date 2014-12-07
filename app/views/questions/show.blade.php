@@ -21,7 +21,9 @@
             </p>
     </div>
 </div>
-
+<div class="row">
+			{{ HTML::link('questions/'. $question->id.'/edit', 'Edit') }}
+</div>
 <div class="rowspacer">
 <h2>Answers</h2>
 <table width="100%" class="display" id="questions" cellspacing="0">

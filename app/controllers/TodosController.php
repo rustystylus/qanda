@@ -162,4 +162,22 @@ class TodosController extends BaseController {
         return Redirect::to('todos');
     }
 
+    public function priorityUp($id)
+    {
+       $todo = Todo::find($id);
+       $todo->position++;
+       $todo->save(); 
+       return Redirect::to('todos');
+    }
+
+    public function priorityDown($id)
+    {
+        $todo = Todo::find($id);
+        if($todo->position > 0)
+        {
+            $todo->position--;
+            $todo->save(); 
+        }
+        return Redirect::to('todos');
+    }
 }
