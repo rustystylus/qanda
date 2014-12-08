@@ -1,5 +1,9 @@
 <div class="row">
-			{{ HTML::link('questions', 'Question List') }}
+	<a href="{{ URL::to('questions') }}">
+		<button type="button" class="btn btn-default">
+			Back To Question List
+		</button>
+	</a>
 </div>
 
 <div class="row">
@@ -22,7 +26,30 @@
     </div>
 </div>
 <div class="row">
-			{{ HTML::link('questions/'. $question->id.'/edit', 'Edit') }}
+	<div class="col-md-6">
+		<a href="{{ URL::to('questions/'.$question->id.'/edit') }}">
+			<button type="button" class="btn btn-default">
+				Edit Question
+			</button>
+		</a>
+	</div>
+	<div class="col-md-6">
+		<ul class="list-inline">
+			Question Tags:
+			@foreach ($tags as $t)
+	        <li>
+	             {{$t->text;}}
+	        </li>
+	        @endforeach
+			<li>
+				<a href="{{ URL::to('tags/'. $question->id.'/create' ) }}">
+					<button type="button" class="btn btn-default">
+						Add Tag
+					</button>
+				</a>
+			</li>
+		</ul>
+	</div>
 </div>
 <div class="rowspacer">
 <h2>Answers</h2>
@@ -68,18 +95,5 @@
 		</button>
 	</a>
 
-	<p/>tag cloud</p>
-		<ul class="list-inline">
-            @foreach ($tags as $t)
-            <li>
-                 {{$t->text;}}
-            </li>
-            @endforeach
-		</ul>
-	<a href="{{ URL::to('tags/'. $question->id.'/create' ) }}">
-		<button type="button" class="btn btn-default">
-			Add Tag
-		</button>
-	</a>
 
 
