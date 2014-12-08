@@ -176,7 +176,29 @@ class TodosController extends BaseController {
         if($todo->position > 0)
         {
             $todo->position--;
-            $todo->save(); 
+            $todo->save();
+        }
+        return Redirect::to('todos');
+    }
+
+    public function done($id)
+    {
+        $todo = Todo::find($id);
+        if($todo->position > 0)
+        {
+            $todo->position = 0;
+            $todo->save();
+        }
+        return Redirect::to('todos');
+    }
+
+    public function undo($id)
+    {
+        $todo = Todo::find($id);
+        if($todo->position == 0)
+        {
+            $todo->position = 1;
+            $todo->save();
         }
         return Redirect::to('todos');
     }

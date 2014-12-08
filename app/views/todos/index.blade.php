@@ -35,7 +35,7 @@
         </tfoot>
         <tbody>
 			@foreach ($todoInfo as $info)
-				<tr data-id={{$info->id}}>	
+				<tr data-id={{$info->id}}>
 				    <td>
 				        {{$info->position}}
 				    </td>
@@ -57,10 +57,11 @@
 							Set	Reminder
     					</a>
 					</td>
-					<td>
-			    		<a href="#">
-							Mark as done
-    					</a>
+					<td>@if ($info->position > 0)
+			    		    <a href="{{ URL::action('TodosController@done', [$info->id] ) }}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+					    @else
+					        <a href="{{ URL::action('TodosController@undo', [$info->id] ) }}"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
+					    @endif
 					</td>
 				</tr>
 			@endforeach

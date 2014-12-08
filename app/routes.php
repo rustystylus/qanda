@@ -60,6 +60,9 @@ Route::get('answers/{id}/show', array('as' => 'show', 'uses' => 'AnswersControll
 Route::resource('todos', 'TodosController');
 Route::get('todos/{id}/priorityUp', array('as' => 'priorityUp', 'uses' => 'TodosController@priorityUp'));
 Route::get('todos/{id}/priorityDown', array('as' => 'priorityDown', 'uses' => 'TodosController@priorityDown'));
+Route::get('todos/{id}/done', array('as' => 'done', 'uses' => 'TodosController@done'));
+Route::get('todos/{id}/undo', array('as' => 'undo', 'uses' => 'TodosController@undo'));
+
 
 Route::resource('Rmexcel', 'RmexcelsController');
 
