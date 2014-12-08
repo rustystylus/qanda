@@ -57,6 +57,7 @@ class TodosController extends BaseController {
             $todo->user_id = Input::get('user_id');
             $todo->description = Input::get('description');
             $todo->content = Input::get('content');
+            $todo->position = 1;
             $todo->save();
 
             // redirect
