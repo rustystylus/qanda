@@ -1,15 +1,6 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
+
 Route::get('form', function(){
     return View::make('form');
 });
@@ -50,7 +41,6 @@ Route::resource('tags', 'TagsController');
 Route::get('tags/{id}/create', array('as' => 'create', 'uses' => 'TagsController@create'));
 
 Route::resource('questions', 'QuestionsController');
-//Route::get('questions/quote/{id}', array('as' => 'quote', 'uses' => 'QuestionsController@quote'));
 
 Route::resource('answers', 'AnswersController');
 Route::get('answers/{id}/create', array('as' => 'create', 'uses' => 'AnswersController@create'));
