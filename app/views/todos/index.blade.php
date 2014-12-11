@@ -37,7 +37,9 @@
 			@foreach ($todoInfo as $info)
 				<tr data-id={{$info->id}}>
 				    <td>
+					<span class="badge alert-info">
 				        {{$info->position}}
+					</span>
 				    </td>
 				    <td><a href="{{ URL::action('TodosController@priorityUp', [$info->id] ) }}"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a></td>
 				    <td><a href="{{ URL::action('TodosController@priorityDown', [$info->id] ) }}"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></td>
