@@ -35,9 +35,9 @@
         </tfoot>
         <tbody>
 			@foreach ($todoInfo as $info)
-				<tr data-id={{$info->id}}>
+				<tr data-id={{$info->id}} >
 				    <td>
-					<span class="badge">
+					<span class="badge alert-info">
 				        {{$info->position}}
 					</span>
 				    </td>

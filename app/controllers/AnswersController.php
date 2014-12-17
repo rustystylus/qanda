@@ -148,4 +148,10 @@ class AnswersController extends BaseController {
 		return Redirect::to('answers');
 	}
 
+    public function voteUp($id)
+    {
+        // get the answer
+        $answer = Answer::find($id);
+
+    }
 }

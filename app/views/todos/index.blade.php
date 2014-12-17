@@ -35,7 +35,7 @@
         </tfoot>
         <tbody>
 			@foreach ($todoInfo as $info)
-				<tr data-id={{$info->id}}>
+				<tr data-id={{ $info->id }} >
 				    <td>
 					<span class="badge alert-info">
 				        {{$info->position}}
@@ -50,6 +50,11 @@
     					<a href="{{ URL::action('TodosController@show', [$info->id] ) }}">
 								View
     					</a>
+					</td>
+					<td>
+						<a href="{{ URL::action('TodosController@edit', [$info->id] ) }}">
+							Edit
+						</a>
 					</td>
 					<td>
 			    		{{date("j M-Y", strtotime($info->updated_at));}}

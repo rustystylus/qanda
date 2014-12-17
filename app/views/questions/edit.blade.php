@@ -1,4 +1,6 @@
-
+<div class="row">
+	{{ HTML::link('questions', 'Question List') }}
+</div>
 
 <h1>Edit question: {{ $question->id }}</h1>
 

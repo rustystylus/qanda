@@ -18,6 +18,9 @@ body {
 .rowspacer{
     margin-top: 20px; /* define margin as you see fit */
 }
+.mygrey{
+	background: #999999;
+}
 /*
 @font-face {
 	    font-family: Economica;
