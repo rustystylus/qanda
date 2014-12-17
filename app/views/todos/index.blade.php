@@ -16,6 +16,7 @@
                 <th>Down</th>
 		        <th>Todo</th>
                 <th>Todo</th>
+                <th>Edit</th>
                 <th>Updated</th>
                 <th>Reminder</th>
                 <th>Done</th>   
@@ -23,6 +24,7 @@
         </thead>
         <tfoot>
             <tr>            	
+                <th></th>
                 <th></th>
                 <th></th>
                 <th></th>

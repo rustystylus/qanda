@@ -3,9 +3,8 @@
 	{{ HTML::link('todos', 'Todo List') }}
 </div>
 
-<h1>Edit todo: {{ $todo->id }}</h1>
-
 <!-- if there are creation errors, they will show here -->
+<div class="row">
 {{ HTML::ul($errors->all()) }}
 
 {{ Form::model($todo, array('route' => array('todos.update', $todo->id), 'method' => 'PUT')) }}
@@ -26,5 +25,5 @@
 
 {{ Form::close() }}
 
-
+</div>
 
