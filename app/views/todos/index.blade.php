@@ -15,7 +15,7 @@
                 <th>Up</th>
                 <th>Down</th>
 		        <th>Todo</th>
-                <th>Todo</th>
+                <th>View</th>
                 <th>Edit</th>
                 <th>Updated</th>
                 <th>Reminder</th>
@@ -50,12 +50,12 @@
 					</td>
 					<td>
     					<a href="{{ URL::action('TodosController@show', [$info->id] ) }}">
-								View
+					<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
     					</a>
 					</td>
 					<td>
 						<a href="{{ URL::action('TodosController@edit', [$info->id] ) }}">
-							Edit
+						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>	
 						</a>
 					</td>
 					<td>
