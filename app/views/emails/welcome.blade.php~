@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<h2>Registration</h2>
+		<h2>Welcome</h2>
 
-		<p>
-			Welcome to rustystylus.co.uk, thanks for registering
-		</p>
+		<div>
+			hello
+		</div>
 	</body>
 </html>
