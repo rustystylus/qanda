@@ -25,11 +25,12 @@ class UsersController extends BaseController {
 		$user->email = Input::get('email');
 		$user->password = Hash::make(Input::get('password'));
 		$user->save();
-		Mail::send('emails.welcome', array('key' => 'value'), function($message)
+/*		Mail::send('emails.welcome', array('key' => 'value'), function($message)
 		{
 			$message->to('rustystylus@gmail.com', 'Richard Marsden')->subject('Welcome!');
 			$message->from('rustystylus@gmail.com', 'Sender');
 		});
+*/
 		return Redirect::to('users/login')->with('message', 'Thanks for registering!');
 
 	    } else {

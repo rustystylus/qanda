@@ -28,6 +28,7 @@ class UsersController extends BaseController {
 		Mail::send('emails.welcome', array('key' => 'value'), function($message)
 		{
 			$message->to('rustystylus@gmail.com', 'Richard Marsden')->subject('Welcome!');
+			$message->from('rustystylus@gmail.com', 'Sender');
 		});
 		return Redirect::to('users/login')->with('message', 'Thanks for registering!');
 

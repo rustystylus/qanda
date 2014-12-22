@@ -12,14 +12,14 @@
         <thead>
             <tr>            	
                 <th>Question</th>
-                <th>Question</th> 
+                <th>View</th>
                 <th>Updated</th>
             </tr>
         </thead>
         <tfoot>
             <tr>            	
                 <th>Question</th>
-                <th>Question</th>
+                <th>View</th>
                 <th>Updated</th>
             </tr>
         </tfoot>
@@ -31,11 +31,9 @@
 		    			{{$info->content}}
 					</td>
 					<td>
-						<a href="{{ URL::action('QuestionsController@show', [$info->id] ) }}">
-							<button type="button" class="btn btn-default">
-								View Question
-							</button>
-						</a> 		
+ 						<a href="{{ URL::action('QuestionsController@show', [$info->id] ) }}">
+							<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+						</a>
 					</td>
 					<td>
 			    		{{date("j M-Y", strtotime($info->updated_at));}}
