@@ -32,7 +32,7 @@
 					</td>
 					<td>
  						<a href="{{ URL::action('QuestionsController@show', [$info->id] ) }}">
-							<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 						</a>
 					</td>
 					<td>
