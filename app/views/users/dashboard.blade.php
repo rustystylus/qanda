@@ -3,13 +3,7 @@
       http://twitter.github.com/bootstrap/javascript.html#carousel -->
 <div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
   <div class="carousel-inner">
-    <div class="item active"><!-- class of active since it's the first item -->
-         {{ HTML::image('images/img1.jpg', 'img1') }}
-      <div class="carousel-caption">
-        <p></p>
-      </div>
-    </div>
-    <div class="item">
+    <div class="item active">
       {{ HTML::image('images/img2.jpg', 'img2') }}
       <div class="carousel-caption">
         <p></p>
