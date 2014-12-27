@@ -3,6 +3,7 @@
 </div>
 <div class="row">
 	{{ Form::open(array('url'=>'users/signin', 'class'=>'form-signin')) }}
+	    <p class="form-signin-heading">Please Login</p>
 	 
 	    {{ Form::text('email', null, array('class'=>'input-block-level', 'placeholder'=>'Email Address')) }}
 	    {{ Form::password('password', array('class'=>'input-block-level', 'placeholder'=>'Password')) }}
