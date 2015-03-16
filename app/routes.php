@@ -46,6 +46,8 @@ Route::resource('answers', 'AnswersController');
 Route::get('answers/{id}/create', array('as' => 'create', 'uses' => 'AnswersController@create'));
 Route::post('answers/{id}/store', array('as' => 'store', 'uses' => 'AnswersController@store'));
 Route::get('answers/{id}/show', array('as' => 'show', 'uses' => 'AnswersController@show'));
+Route::get('answers/{id}/voteUp', array('as' => 'voteUp', 'uses' => 'AnswersController@voteUp'));
+Route::get('answers/{id}/voteDown', array('as' => 'voteDown', 'uses' => 'AnswersController@voteDown'));
 
 Route::resource('todos', 'TodosController');
 Route::get('todos/{id}/priorityUp', array('as' => 'priorityUp', 'uses' => 'TodosController@priorityUp'));

@@ -151,7 +151,12 @@ class AnswersController extends BaseController {
     public function voteUp($id)
     {
         // get the answer
-        $answer = Answer::find($id);
+        $answer = Answer::find($answer_id);
+    }
 
+    public function voteDown($id)
+    {
+        // get the answer
+        $answer = Answer::find($id);
     }
 }
