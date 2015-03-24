@@ -10,6 +10,12 @@
       </div>
     </div>
     <div class="item">
+      {{ HTML::image('images/img1.jpg', 'img1') }}
+      <div class="carousel-caption">
+        <p></p>
+      </div>
+    </div>
+    <div class="item">
       {{ HTML::image('images/img3.jpg', 'img3') }}
       <div class="carousel-caption">
         <p></p>

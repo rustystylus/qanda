@@ -1,6 +1,4 @@
-<div class="row"><!-- class of active since it's the first item -->
-     {{ HTML::image('images/img1.jpg', 'img1', array('class' => 'img-responsive')) }}
-</div>
+
 <div class="row">
 	{{ Form::open(array('url'=>'users/signin', 'class'=>'form-signin')) }}
 	 
