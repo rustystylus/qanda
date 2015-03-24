@@ -47,9 +47,10 @@
                                 <li>{{ HTML::link('todos', 'Todo') }}</li>
                                 <li>{{ HTML::link('users/restapi', 'RestAPI') }}</li>
                                 <li class="divider"></li>
-                                @if (Auth::user()->id == 5)
+                             <!--   @if (Auth::user()->id == 5)
                                 <li>{{ HTML::link('form', 'Upload Spreadsheet') }}</li>
                                 @endif
+				-->
                                 <li>{{ HTML::link('Rmexcel', 'Show Spreadsheet Table') }}</li>
                             </ul>
                         </li>
