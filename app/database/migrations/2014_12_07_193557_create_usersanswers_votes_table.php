@@ -12,10 +12,12 @@ class CreateUsersanswersVotesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('user_answer_vote', function($table) {
+		Schema::create('user_answer_votes', function($table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('answer_id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('answer_id')->unsigned();
+            $table->foreign('answer_id')->references('id')->on('answers');
             $table->boolean('vote');//up or down, true or false
             $table->timestamps();
         });
@@ -28,7 +30,7 @@ class CreateUsersanswersVotesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('user_answer_vote');
+		Schema::drop('user_answer_votes');
 	}
 
 }
