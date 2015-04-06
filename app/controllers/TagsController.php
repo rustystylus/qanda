@@ -31,6 +31,7 @@ class TagsController extends BaseController {
         $tags = Question::find($id)->tags;
 		$this->layout->content = View::make('tags.create')
 					->with('question_id', $question->id)
+					->with('user', Auth::user())
                     ->with('tags', $tags);
         //$this->layout->content = View::make('tags.create');
 	}
@@ -130,7 +131,7 @@ class TagsController extends BaseController {
 		} else {
 			// store
 			$tag = Tag::find($id);
-			$tag->text       = Input::get('text');
+			$tag->text  = Input::get('text');
 			$tag->save();
 
 			// redirect

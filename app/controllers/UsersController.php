@@ -31,7 +31,9 @@ class UsersController extends BaseController {
 			$message->from('rustystylus@gmail.com', 'Sender');
 		});
 */
-		return Redirect::to('users/login')->with('message', 'Thanks for registering!');
+		Auth::login($user);
+
+		return Redirect::to('users/dashboard')->with('message', 'Thanks for registering! You are logged in');
 
 	    } else {
 	        // validation has failed, display error messages
